@@ -1,10 +1,31 @@
 <?
 
 $response = array();
+$data = array();
 
 $m = new MongoClient();
 $db = $m->citypie;
 $users = $db->users;
+
+if ( isset($_POST['email']) ) {
+	if ( IsValidEmail($_POST['email']) ) {
+		$data['email'] = $_POST['email'];
+	}
+	else {
+		$errors[] = 'The email address does not appear to be valid';
+	}
+}
+else {
+	$errors[] = 'Please enter an email adress';
+}
+
+if ( isset($_POST['name']) ) {
+	$data['name'] = $_POST['name'];
+}
+else {
+	$errors[] = 'Please enter your name';
+}
+
 
 if (isset($query_parts[1])) {
 	$user_id = $query_parts[1];
@@ -47,16 +68,7 @@ else {
 		$response['offset'] = 0;
 		$response['total'] = count($user_list);
 		foreach ($user_list as $user) {
-			$response['data'][] = array(
-				'id' => (string) $user['_id'], 
-				'created' => $user['created']->sec, 
-				'name' => $user['name'], 
-				'pic' => $user['pic'], 
-				'cities' => $user['cities'], 
-				'checks' => $user['checks'], 
-				'bookmarks' => $user['bookmarks'], 
-				'badges' => $user['badges']
-			);
+			$response['data'][] = (string) $user['_id'];
 		}
 		
 	}
@@ -73,5 +85,13 @@ RestUtils::sendResponse(
 	$format
 );
 exit;
+
+function IsValidEmail ($address) {
+	return ( preg_match( 
+		'/^[-!#$%&\'*+\\.\\/0-9=?A-Z^_`a-z{|}~]+' 
+		. '@' 
+		. '[-!#$%&\'*+\\/0-9=?A-Z^_`a-z{|}~]+\.' 
+		. '[-!#$%&\'*+\\.\\/0-9=?A-Z^_`a-z{|}~]+$/', $address ));
+}
 
 ?>

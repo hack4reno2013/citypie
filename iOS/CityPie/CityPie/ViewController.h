@@ -16,4 +16,5 @@
 @property (strong,nonatomic) IBOutlet UIBarButtonItem *leftNavItem;
 @property(nonatomic, strong) NSMutableArray *slices;
 @property(nonatomic, strong) NSArray        *sliceColors;
+-(IBAction)toggleLeftSlide:(id)sender;
 @end

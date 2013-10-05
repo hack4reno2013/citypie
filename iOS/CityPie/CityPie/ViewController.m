@@ -56,9 +56,9 @@
     //UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithImage:<#(UIImage *)#> style:<#(UIBarButtonItemStyle)#> target:<#(id)#> action:<#(SEL)#>];
    // self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"<" style:UIBarButtonItemStyleBordered target:self.viewDeckController action:@selector(toggleLeftView)];
     self.leftNavItem = [[UIBarButtonItem alloc] init];
-    self.leftNavItem.image = [UIImage imageNamed:@"menu_button_white.png"];
-    [self.leftNavItem setTarget:self.viewDeckController];
-    [self.leftNavItem setAction:@selector(toggleLeftView)];
+    self.leftNavItem.image = [UIImage imageNamed:@"menu_icon_white.png"];
+    [self.leftNavItem setTarget:self];
+    [self.leftNavItem setAction:@selector(toggleLeftSlide:)];
     [self.leftNavItem setTintColor:[UIColor whiteColor]];
     self.navigationItem.leftBarButtonItem = self.leftNavItem;
 }
@@ -66,7 +66,9 @@
     [super viewDidAppear:animated];
     [self.pieChartLeft reloadData];
 }
-
+-(IBAction)toggleLeftSlide:(id)sender {
+    [self.viewDeckController toggleOpenView];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

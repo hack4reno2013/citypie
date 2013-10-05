@@ -1629,6 +1629,7 @@ static NSTimeInterval durationToAnimate(CGFloat pointsToAnimate, CGFloat velocit
 #pragma mark - Left Side
 
 - (BOOL)toggleLeftView {
+    NSLog(@"WEEEE");
     return [self toggleLeftViewAnimated:YES];
 }
 

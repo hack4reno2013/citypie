@@ -11,6 +11,7 @@
 		B953DE531800B20B001F8172 /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = B953DE4F1800B20B001F8172 /* IIViewDeckController.m */; };
 		B953DE541800B20B001F8172 /* IIWrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = B953DE511800B20B001F8172 /* IIWrapController.m */; };
 		B953DE571800B2ED001F8172 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B953DE561800B2ED001F8172 /* MenuViewController.m */; };
+		B953DE5B1800BD1C001F8172 /* menu_icon_white.png in Resources */ = {isa = PBXBuildFile; fileRef = B953DE5A1800BD1C001F8172 /* menu_icon_white.png */; };
 		B95623141800849700E37552 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95623131800849700E37552 /* Foundation.framework */; };
 		B95623161800849700E37552 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95623151800849700E37552 /* CoreGraphics.framework */; };
 		B95623181800849700E37552 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95623171800849700E37552 /* UIKit.framework */; };
@@ -54,6 +55,7 @@
 		B953DE511800B20B001F8172 /* IIWrapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIWrapController.m; sourceTree = "<group>"; };
 		B953DE551800B2ED001F8172 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		B953DE561800B2ED001F8172 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		B953DE5A1800BD1C001F8172 /* menu_icon_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_icon_white.png; sourceTree = "<group>"; };
 		B95623101800849700E37552 /* CityPie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityPie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B95623131800849700E37552 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B95623151800849700E37552 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -163,6 +165,7 @@
 				B956236718009BFD00E37552 /* XYPieChart */,
 				B956234B180093E700E37552 /* CityPie.png */,
 				B956234F1800947E00E37552 /* CityPie@2x.png */,
+				B953DE5A1800BD1C001F8172 /* menu_icon_white.png */,
 				B953DE551800B2ED001F8172 /* MenuViewController.h */,
 				B953DE561800B2ED001F8172 /* MenuViewController.m */,
 				B95623221800849700E37552 /* AppDelegate.h */,
@@ -306,6 +309,7 @@
 				B956234D180093E700E37552 /* CityPie.png in Resources */,
 				B95623721800A50F00E37552 /* CHANGELOG.md in Resources */,
 				B9562352180094D500E37552 /* Images.xcassets in Resources */,
+				B953DE5B1800BD1C001F8172 /* menu_icon_white.png in Resources */,
 				B95623741800A50F00E37552 /* README.md in Resources */,
 				B956231E1800849700E37552 /* InfoPlist.strings in Resources */,
 				B95623501800947E00E37552 /* CityPie@2x.png in Resources */,

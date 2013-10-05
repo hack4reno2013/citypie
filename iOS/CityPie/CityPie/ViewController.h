@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface ViewController : UIViewController
-
+#import "XYPieChart.h"
+#import "IIViewDeckController.h"
+#import "MenuViewController.h"
+@interface ViewController : UIViewController <XYPieChartDataSource, XYPieChartDelegate>
+@property (strong, nonatomic) IBOutlet UIView *chartView;
+@property (strong, nonatomic) IBOutlet XYPieChart *pieChartLeft;
+@property (strong,nonatomic) IBOutlet UIBarButtonItem *leftNavItem;
+@property(nonatomic, strong) NSMutableArray *slices;
+@property(nonatomic, strong) NSArray        *sliceColors;
 @end

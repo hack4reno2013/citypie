@@ -68,8 +68,8 @@ switch($request->getMethod()) {
 
 	# create new record
 	case 'post':
-		if ( file_exists($noun . "_post.php") ) {
-			require_once($noun . "_post.php");
+		if ( file_exists($model_name . "_post.php") ) {
+			require_once($model_name . "_post.php");
 		}
 		else {
 			# dunno what you want

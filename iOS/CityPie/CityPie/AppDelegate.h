@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "IIViewDeckController.h"
+#import "MenuViewController.h"
+#import "ViewController.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

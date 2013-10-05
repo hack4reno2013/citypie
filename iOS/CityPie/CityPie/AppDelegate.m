@@ -12,7 +12,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    MenuViewController *leftView = [[MenuViewController alloc] init];
+    ViewController *middleView = [[ViewController alloc] init];
+    IIViewDeckController* deckController =  [[IIViewDeckController alloc] initWithCenterViewController:middleView leftViewController:leftView rightViewController:nil];
+
     return YES;
 }
 							

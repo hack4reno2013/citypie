@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B953DE521800B20B001F8172 /* IISideController.m in Sources */ = {isa = PBXBuildFile; fileRef = B953DE4D1800B20B001F8172 /* IISideController.m */; };
+		B953DE531800B20B001F8172 /* IIViewDeckController.m in Sources */ = {isa = PBXBuildFile; fileRef = B953DE4F1800B20B001F8172 /* IIViewDeckController.m */; };
+		B953DE541800B20B001F8172 /* IIWrapController.m in Sources */ = {isa = PBXBuildFile; fileRef = B953DE511800B20B001F8172 /* IIWrapController.m */; };
+		B953DE571800B2ED001F8172 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B953DE561800B2ED001F8172 /* MenuViewController.m */; };
 		B95623141800849700E37552 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95623131800849700E37552 /* Foundation.framework */; };
 		B95623161800849700E37552 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95623151800849700E37552 /* CoreGraphics.framework */; };
 		B95623181800849700E37552 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95623171800849700E37552 /* UIKit.framework */; };
@@ -15,12 +19,20 @@
 		B95623241800849700E37552 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B95623231800849700E37552 /* AppDelegate.m */; };
 		B95623271800849700E37552 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B95623251800849700E37552 /* Main.storyboard */; };
 		B956232A1800849700E37552 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B95623291800849700E37552 /* ViewController.m */; };
-		B956232C1800849700E37552 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B956232B1800849700E37552 /* Images.xcassets */; };
 		B95623331800849700E37552 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95623321800849700E37552 /* XCTest.framework */; };
 		B95623341800849700E37552 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95623131800849700E37552 /* Foundation.framework */; };
 		B95623351800849700E37552 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95623171800849700E37552 /* UIKit.framework */; };
 		B956233D1800849700E37552 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B956233B1800849700E37552 /* InfoPlist.strings */; };
 		B956233F1800849700E37552 /* CityPieTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B956233E1800849700E37552 /* CityPieTests.m */; };
+		B956234A1800892F00E37552 /* NavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B95623491800892F00E37552 /* NavViewController.m */; };
+		B956234D180093E700E37552 /* CityPie.png in Resources */ = {isa = PBXBuildFile; fileRef = B956234B180093E700E37552 /* CityPie.png */; };
+		B95623501800947E00E37552 /* CityPie@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B956234F1800947E00E37552 /* CityPie@2x.png */; };
+		B9562352180094D500E37552 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B9562351180094D500E37552 /* Images.xcassets */; };
+		B956236A18009BFD00E37552 /* XYPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = B956236918009BFD00E37552 /* XYPieChart.m */; };
+		B956236C18009FD100E37552 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B956236B18009FD100E37552 /* QuartzCore.framework */; };
+		B95623721800A50F00E37552 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = B956236E1800A50F00E37552 /* CHANGELOG.md */; };
+		B95623731800A50F00E37552 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B95623701800A50F00E37552 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		B95623741800A50F00E37552 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B95623711800A50F00E37552 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +46,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B953DE4C1800B20B001F8172 /* IISideController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IISideController.h; sourceTree = "<group>"; };
+		B953DE4D1800B20B001F8172 /* IISideController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IISideController.m; sourceTree = "<group>"; };
+		B953DE4E1800B20B001F8172 /* IIViewDeckController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIViewDeckController.h; sourceTree = "<group>"; };
+		B953DE4F1800B20B001F8172 /* IIViewDeckController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIViewDeckController.m; sourceTree = "<group>"; };
+		B953DE501800B20B001F8172 /* IIWrapController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IIWrapController.h; sourceTree = "<group>"; };
+		B953DE511800B20B001F8172 /* IIWrapController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IIWrapController.m; sourceTree = "<group>"; };
+		B953DE551800B2ED001F8172 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		B953DE561800B2ED001F8172 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		B95623101800849700E37552 /* CityPie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityPie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B95623131800849700E37552 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B95623151800849700E37552 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -47,12 +67,23 @@
 		B95623261800849700E37552 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B95623281800849700E37552 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		B95623291800849700E37552 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		B956232B1800849700E37552 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		B95623311800849700E37552 /* CityPieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CityPieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B95623321800849700E37552 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		B956233A1800849700E37552 /* CityPieTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CityPieTests-Info.plist"; sourceTree = "<group>"; };
 		B956233C1800849700E37552 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B956233E1800849700E37552 /* CityPieTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CityPieTests.m; sourceTree = "<group>"; };
+		B95623481800892F00E37552 /* NavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavViewController.h; sourceTree = "<group>"; };
+		B95623491800892F00E37552 /* NavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavViewController.m; sourceTree = "<group>"; };
+		B956234B180093E700E37552 /* CityPie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CityPie.png; sourceTree = "<group>"; };
+		B956234F1800947E00E37552 /* CityPie@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "CityPie@2x.png"; sourceTree = "<group>"; };
+		B9562351180094D500E37552 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B956236818009BFD00E37552 /* XYPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XYPieChart.h; sourceTree = "<group>"; };
+		B956236918009BFD00E37552 /* XYPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XYPieChart.m; sourceTree = "<group>"; };
+		B956236B18009FD100E37552 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B956236E1800A50F00E37552 /* CHANGELOG.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CHANGELOG.md; sourceTree = "<group>"; };
+		B956236F1800A50F00E37552 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		B95623701800A50F00E37552 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		B95623711800A50F00E37552 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B956236C18009FD100E37552 /* QuartzCore.framework in Frameworks */,
 				B95623161800849700E37552 /* CoreGraphics.framework in Frameworks */,
 				B95623181800849700E37552 /* UIKit.framework in Frameworks */,
 				B95623141800849700E37552 /* Foundation.framework in Frameworks */,
@@ -79,6 +111,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B953DE4B1800B20B001F8172 /* ViewDeck */ = {
+			isa = PBXGroup;
+			children = (
+				B953DE4C1800B20B001F8172 /* IISideController.h */,
+				B953DE4D1800B20B001F8172 /* IISideController.m */,
+				B953DE4E1800B20B001F8172 /* IIViewDeckController.h */,
+				B953DE4F1800B20B001F8172 /* IIViewDeckController.m */,
+				B953DE501800B20B001F8172 /* IIWrapController.h */,
+				B953DE511800B20B001F8172 /* IIWrapController.m */,
+			);
+			path = ViewDeck;
+			sourceTree = "<group>";
+		};
 		B95623071800849700E37552 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +146,7 @@
 		B95623121800849700E37552 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B956236B18009FD100E37552 /* QuartzCore.framework */,
 				B95623131800849700E37552 /* Foundation.framework */,
 				B95623151800849700E37552 /* CoreGraphics.framework */,
 				B95623171800849700E37552 /* UIKit.framework */,
@@ -112,12 +158,21 @@
 		B95623191800849700E37552 /* CityPie */ = {
 			isa = PBXGroup;
 			children = (
+				B953DE4B1800B20B001F8172 /* ViewDeck */,
+				B956236D1800A50F00E37552 /* JSONKit */,
+				B956236718009BFD00E37552 /* XYPieChart */,
+				B956234B180093E700E37552 /* CityPie.png */,
+				B956234F1800947E00E37552 /* CityPie@2x.png */,
+				B953DE551800B2ED001F8172 /* MenuViewController.h */,
+				B953DE561800B2ED001F8172 /* MenuViewController.m */,
 				B95623221800849700E37552 /* AppDelegate.h */,
 				B95623231800849700E37552 /* AppDelegate.m */,
 				B95623251800849700E37552 /* Main.storyboard */,
+				B95623481800892F00E37552 /* NavViewController.h */,
+				B95623491800892F00E37552 /* NavViewController.m */,
 				B95623281800849700E37552 /* ViewController.h */,
 				B95623291800849700E37552 /* ViewController.m */,
-				B956232B1800849700E37552 /* Images.xcassets */,
+				B9562351180094D500E37552 /* Images.xcassets */,
 				B956231A1800849700E37552 /* Supporting Files */,
 			);
 			path = CityPie;
@@ -150,6 +205,26 @@
 				B956233B1800849700E37552 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B956236718009BFD00E37552 /* XYPieChart */ = {
+			isa = PBXGroup;
+			children = (
+				B956236818009BFD00E37552 /* XYPieChart.h */,
+				B956236918009BFD00E37552 /* XYPieChart.m */,
+			);
+			path = XYPieChart;
+			sourceTree = "<group>";
+		};
+		B956236D1800A50F00E37552 /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				B956236E1800A50F00E37552 /* CHANGELOG.md */,
+				B956236F1800A50F00E37552 /* JSONKit.h */,
+				B95623701800A50F00E37552 /* JSONKit.m */,
+				B95623711800A50F00E37552 /* README.md */,
+			);
+			path = JSONKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,8 +303,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B956232C1800849700E37552 /* Images.xcassets in Resources */,
+				B956234D180093E700E37552 /* CityPie.png in Resources */,
+				B95623721800A50F00E37552 /* CHANGELOG.md in Resources */,
+				B9562352180094D500E37552 /* Images.xcassets in Resources */,
+				B95623741800A50F00E37552 /* README.md in Resources */,
 				B956231E1800849700E37552 /* InfoPlist.strings in Resources */,
+				B95623501800947E00E37552 /* CityPie@2x.png in Resources */,
 				B95623271800849700E37552 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,9 +328,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B953DE521800B20B001F8172 /* IISideController.m in Sources */,
+				B953DE531800B20B001F8172 /* IIViewDeckController.m in Sources */,
 				B956232A1800849700E37552 /* ViewController.m in Sources */,
+				B95623731800A50F00E37552 /* JSONKit.m in Sources */,
+				B956236A18009BFD00E37552 /* XYPieChart.m in Sources */,
+				B953DE541800B20B001F8172 /* IIWrapController.m in Sources */,
 				B95623241800849700E37552 /* AppDelegate.m in Sources */,
+				B956234A1800892F00E37552 /* NavViewController.m in Sources */,
 				B95623201800849700E37552 /* main.m in Sources */,
+				B953DE571800B2ED001F8172 /* MenuViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +546,7 @@
 				B95623441800849700E37552 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B95623451800849700E37552 /* Build configuration list for PBXNativeTarget "CityPieTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +555,7 @@
 				B95623471800849700E37552 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

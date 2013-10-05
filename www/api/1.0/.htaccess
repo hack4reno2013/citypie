@@ -1,0 +1,7 @@
+Options +FollowSymLinks
+RewriteEngine On
+#  Rules
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .+ /api/1.0/index.php [L]
+

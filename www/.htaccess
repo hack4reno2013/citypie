@@ -1,2 +1,3 @@
-ErrorDocument 404 router.php
+# 
+ErrorDocument 404 /router.php
 

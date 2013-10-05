@@ -3,9 +3,12 @@ require_once('../../lib/rest.php');
 
 $dispatcher = array(
 	# request    class
-	'users'  => 'user', 
-	'checks' => 'check', 
-	'badges' => 'badge'
+	'users'      => 'user', 
+	'checks'     => 'check', 
+	'badges'     => 'badge', 
+	'categories' => 'category', 
+	'tags'       => 'tag', 
+	'tasks'      => 'task'
 );
 
 $errors = array();
@@ -69,24 +72,12 @@ switch($request->getMethod()) {
 			require_once($noun . "_post.php");
 		}
 		else {
-			$item = new $model_name();
-			$F = new ApiForm($item);
-			if ( $res = $F->checkFields() ) {
-				$item->orderID = $order_id; # enforce orderid constraint
-				$item_id = $item->save();
-				RestUtils::sendResponse(
-					201, 
-					json_encode(array('status' => 'ok', 'id' => $item_id)), 
-					$format
-				);
-			}
-			else {
-				RestUtils::sendResponse(
-					400, 
-					json_encode(array('status' => 'error', 'errors' => $F->Errs)), 
-					$format
-				);
-			}
+			# dunno what you want
+			RestUtils::sendResponse(
+				501, 
+				json_encode(array('status' => 'error', 'errors' => array('Not Implemented'))), 
+				$format
+			);
 		}
 		break;
 
@@ -99,33 +90,12 @@ switch($request->getMethod()) {
 			require_once($noun . "_put.php");
 		}
 		else {
-			if ( is_numeric($query_parts[1]) ) {
-				$item_id = $query_parts[1];
-
-				$F = new ApiForm($item);
-				if ( $res = $F->checkFields() ) {
-					$item_id = $item->Update();
-					RestUtils::sendResponse(
-						201, 
-						json_encode(array('status' => 'ok', 'item' => $item->Serialize)), 
-						$format
-					);
-				}
-				else {
-					RestUtils::sendResponse(
-						400, 
-						json_encode(array('status' => 'error', 'errors' => $F->Errs)), 
-						$format
-					);
-				}
-			}
-			else {
-				RestUtils::sendResponse(
-					400, 
-					json_encode(array('status' => 'error', 'errors' => array('ID Missing or Invalid'))), 
-					$format
-				);
-			}
+			# dunno what you want
+			RestUtils::sendResponse(
+				501, 
+				json_encode(array('status' => 'error', 'errors' => array('Not Implemented'))), 
+				$format
+			);
 		}
 		break;
 

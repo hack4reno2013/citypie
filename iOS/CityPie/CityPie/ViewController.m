@@ -55,18 +55,21 @@
     
     //UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithImage:<#(UIImage *)#> style:<#(UIBarButtonItemStyle)#> target:<#(id)#> action:<#(SEL)#>];
    // self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"<" style:UIBarButtonItemStyleBordered target:self.viewDeckController action:@selector(toggleLeftView)];
-    self.leftNavItem = [[UIBarButtonItem alloc] init];
-    self.leftNavItem.image = [UIImage imageNamed:@"menu_button_white.png"];
-    [self.leftNavItem setTarget:self.viewDeckController];
-    [self.leftNavItem setAction:@selector(toggleLeftView)];
+    /*self.leftNavItem = [[UIBarButtonItem alloc] init];
+    self.leftNavItem.image = [UIImage imageNamed:@"menu_icon_white.png"];
+    [self.leftNavItem setTarget:self];
+    [self.leftNavItem setAction:@selector(toggleLeftSlide:)];
     [self.leftNavItem setTintColor:[UIColor whiteColor]];
-    self.navigationItem.leftBarButtonItem = self.leftNavItem;
+    self.navigationItem.leftBarButtonItem = self.leftNavItem;*/
 }
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [self.pieChartLeft reloadData];
 }
-
+-(IBAction)toggleLeftSlide:(id)sender {
+    NSLog(@"Go...");
+    [self.viewDeckController toggleLeftViewAnimated:YES completion:nil];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

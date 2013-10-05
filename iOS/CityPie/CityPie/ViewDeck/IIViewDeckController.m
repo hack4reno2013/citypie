@@ -1629,6 +1629,7 @@ static NSTimeInterval durationToAnimate(CGFloat pointsToAnimate, CGFloat velocit
 #pragma mark - Left Side
 
 - (BOOL)toggleLeftView {
+    NSLog(@"WEEEE");
     return [self toggleLeftViewAnimated:YES];
 }
 
@@ -1645,7 +1646,9 @@ static NSTimeInterval durationToAnimate(CGFloat pointsToAnimate, CGFloat velocit
 }
 
 - (BOOL)toggleLeftViewAnimated:(BOOL)animated completion:(IIViewDeckControllerBlock)completed {
-    if ([self isSideClosed:IIViewDeckLeftSide]) 
+    NSLog(@"Oh dear!");
+
+    if ([self isSideClosed:IIViewDeckLeftSide])
         return [self openLeftViewAnimated:animated completion:completed];
     else
         return [self closeLeftViewAnimated:animated completion:completed];

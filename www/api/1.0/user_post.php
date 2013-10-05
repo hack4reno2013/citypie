@@ -17,11 +17,6 @@ if ( isset($_POST['email']) ) {
 				$response['status'] = 'error';
 				$response[errors] = 'A user already exists with that email address';
 			}
-			else {
-				$status_code = 404;
-				$response['status'] = 'error';
-				$response['errors'] = array('User not found');
-			}
 	}
 	else {
 		$errors[] = 'The email address does not appear to be valid';
@@ -46,11 +41,27 @@ else {
 }
 
 if ( count($errors) == 0 ) {
+	$data['created'] = new MongoDate();
+	$data['pic'] = null;
+	$data['cities'] = 1;
+	$data['checks'] = 0;
+	$data['bookmarks'] = 1;
+	$data['badges'] = array();
 	try {
 		$users->insert($data);
 		$status_code = 200;
 		$response['status'] = 'ok';
 		$response['data'] = $data;
+		$response['data'] = array(
+			'id' => (string) $data['_id'], 
+			'created' => $data['created']->sec, 
+			'name' => $data['name'], 
+			'pic' => $data['pic'], 
+			'cities' => $data['cities'], 
+			'checks' => $data['checks'], 
+			'bookmarks' => $data['bookmarks'], 
+			'badges' => $data['badges']
+		);
 	}
 	catch (MongoException $e) {
 		$status_code = 500;

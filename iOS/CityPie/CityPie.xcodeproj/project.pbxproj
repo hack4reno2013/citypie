@@ -34,6 +34,7 @@
 		B95623721800A50F00E37552 /* CHANGELOG.md in Resources */ = {isa = PBXBuildFile; fileRef = B956236E1800A50F00E37552 /* CHANGELOG.md */; };
 		B95623731800A50F00E37552 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = B95623701800A50F00E37552 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		B95623741800A50F00E37552 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B95623711800A50F00E37552 /* README.md */; };
+		B9F402CF1800C2840032EA6A /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F402CE1800C2840032EA6A /* UserViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,9 @@
 		B956236F1800A50F00E37552 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		B95623701800A50F00E37552 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		B95623711800A50F00E37552 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		B9F402CD1800C2840032EA6A /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
+		B9F402CE1800C2840032EA6A /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
+		B9F402D01800C2B30032EA6A /* globals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = globals.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +175,9 @@
 				B95623221800849700E37552 /* AppDelegate.h */,
 				B95623231800849700E37552 /* AppDelegate.m */,
 				B95623251800849700E37552 /* Main.storyboard */,
+				B9F402CD1800C2840032EA6A /* UserViewController.h */,
+				B9F402CE1800C2840032EA6A /* UserViewController.m */,
+				B9F402D01800C2B30032EA6A /* globals.h */,
 				B95623481800892F00E37552 /* NavViewController.h */,
 				B95623491800892F00E37552 /* NavViewController.m */,
 				B95623281800849700E37552 /* ViewController.h */,
@@ -339,6 +346,7 @@
 				B956236A18009BFD00E37552 /* XYPieChart.m in Sources */,
 				B953DE541800B20B001F8172 /* IIWrapController.m in Sources */,
 				B95623241800849700E37552 /* AppDelegate.m in Sources */,
+				B9F402CF1800C2840032EA6A /* UserViewController.m in Sources */,
 				B956234A1800892F00E37552 /* NavViewController.m in Sources */,
 				B95623201800849700E37552 /* main.m in Sources */,
 				B953DE571800B2ED001F8172 /* MenuViewController.m in Sources */,

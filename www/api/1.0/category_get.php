@@ -42,6 +42,7 @@ else {
 		$response['total'] = count($cat_list);
 		foreach ($cat_list as $cat) {
 			$response['data'][] = array(
+				'id' => (string) $cat['_id'], 
 				'name' => $cat['name'], 
 				'description' => $cat['description'], 
 			);

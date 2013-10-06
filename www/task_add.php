@@ -16,11 +16,36 @@ if (! is_null($cursor) ) {
 	}
 }
 
-$category = null;
-$name = null;
-$description = null;
-$requirement = null;
-$latlon = 'Reno, NV';
+if ( isset($_REQUEST['id']) ) {
+	$action = 'Update';
+	$id = $_REQUEST['id'];
+	$mongo_id = new MongoID($id);
+	$tasks = $db->tasks;
+	$task = $tasks->findOne(array('_id' => $mongo_id));
+	if (! is_null($task) ) {
+		$category = $task['category'];
+		$name = $task['name'];
+		$description = $task['description'];
+		if ( is_array($task['requirements']) ) {
+			$requirement = key($task['requirements'][0]);
+			if ( $requirement == 'geo' ) {
+				$latlon = join(',', $task['requirements'][0]['geo']);
+			}
+		}
+	}
+	else {
+		$errors[] = 'Unknown Task (' . $id . ')';
+	}
+}
+else {
+	$action = 'Add';
+	$id = null;
+	$category = null;
+	$name = null;
+	$description = null;
+	$requirement = null;
+	$latlon = 'Reno, NV';
+}
 
 # deal with apache hassles
 $update = false;
@@ -94,16 +119,24 @@ if ( $update ) {
 		}
 		$data['created'] = new MongoDate();
 		$tasks = $db->tasks;
-		$tasks->insert($data);
-		$notices[] = "Task Added";
+		if ( isset($id) ) {
+			$mongo_id = new MongoID($id);
+			$tasks->update(array('_id' => $mongo_id), $data);
+			$notices[] = "Task Updated";
+		}
+		else {
+			$tasks->insert($data);
+			$notices[] = "Task Added";
+		}
 		
 		if ( $requirement == 'scan' ) {
-			$redir = UrlEncode('http://' . $_SERVER['HTTP_HOST'] . '/qr/' .  $data['_id']);
+			$redir = UrlEncode('http://' . $_SERVER['HTTP_HOST'] . '/qr?id=' .  $data['_id']);
 			header("Location: http://chart.apis.google.com/chart?cht=qr&chs=300x300&chl=" . $redir . "&chld=H|0");
 			exit;
 		}
 
 		# empty these out
+		$id = null;
 		$category = null;
 		$name = null;
 		$description = null;
@@ -139,6 +172,9 @@ if ( $update ) {
 	$(document).ready(function(){
 		jQuery('#lat').locationPicker();
 		
+		if ( $('#requirement').val() == 'geo' ) {
+			$('#geo_block').show();
+		}
 		$('#requirement').change(function(){
 			if ( $(this).val() == 'geo' ) {
 				$('#geo_block').show();
@@ -168,9 +204,10 @@ if ( $update ) {
   	</div>
 <? ENDIF?>
 
-	<h2>Add a Task</h2>
+	<h2><?= HtmlSpecialChars($action); ?> a Task</h2>
 
-	<form method="post" id="newuser" class="fform">
+	<form action="/task_add.php" method="post" id="newuser" class="fform">
+		<input type="hidden" name="id" id="id" value="<?= HtmlSpecialChars($id); ?>">
 		
 		<label for="name">Name</label>
 		<input type="text" name="name" id="name" value="<?= HtmlSpecialChars($name); ?>">
@@ -190,7 +227,7 @@ if ( $update ) {
 		<select name="requirement" id="requirement">
 			<option value=""<?= ($requirement=='')?(' selected="selected"'):(''); ?>> - Choose the task type - </option>
 			<option value="geo"<?= ($requirement=='geo')?(' selected="selected"'):(''); ?>>Location</option>
-			<option value="scan"<?= ($requirement=='geo')?(' selected="selected"'):(''); ?>>QR Code</option>
+			<option value="scan"<?= ($requirement=='scan')?(' selected="selected"'):(''); ?>>QR Code</option>
 		</select>
 		
 		<div id="geo_block">
@@ -199,7 +236,8 @@ if ( $update ) {
 			<input type="text" name="latlon" id="lat" value="<?= HtmlSpecialChars($latlon); ?>">
 		</div>
 
-		<input type="submit" value="Add">
+
+		<input type="submit" value="<?= HtmlSpecialChars($action); ?>">
 		
 	</form>
 		

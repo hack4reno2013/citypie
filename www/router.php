@@ -1,4 +1,5 @@
 <?
+header("HTTP/1.0 200 OK");
 
 $request_path = preg_replace(
 	'/^([^\?]+).*$/', 
@@ -17,6 +18,7 @@ switch ($request_path) {
 		$page = 'task_add.php';
 		break;
 	default:
+		header("HTTP/1.0 404 Not Found");
 		$page = '404.php';
 }
 

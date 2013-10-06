@@ -59,6 +59,7 @@ else {
 		}
 		
 		$tag_list = $tags->find($filters);
+		$tag_list->sort(array('count' => -1));
 		$status_code = 200;
 		$response['status'] = 'ok';
 		$response['count'] = count($tag_list);
@@ -67,8 +68,8 @@ else {
 		foreach ($tag_list as $tag) {
 			$response['data'][] = array(
 				'id'     => (string) $tag['_id'], 
-				'type'   =>$tag['type'], 
-				'object' => $tag['id'], 
+				'type'   => $tag['type'], 
+				'object' => (string) $tag['id'], 
 				'name'   => $tag['name'], 
 				'count'  => $tag['count'], 
 			);

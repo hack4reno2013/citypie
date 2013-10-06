@@ -47,6 +47,7 @@ if ( count($errors) == 0 ) {
 	$data['checks'] = 0;
 	$data['bookmarks'] = 1;
 	$data['badges'] = array();
+	$data['tasks'] = array();
 	try {
 		$users->insert($data);
 		$status_code = 200;
@@ -61,6 +62,7 @@ if ( count($errors) == 0 ) {
 			'checks' => $data['checks'], 
 			'bookmarks' => $data['bookmarks'], 
 			'badges' => $data['badges']
+			'tasks' => $data['tasks']
 		);
 	}
 	catch (MongoException $e) {

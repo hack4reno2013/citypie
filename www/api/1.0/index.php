@@ -8,7 +8,8 @@ $dispatcher = array(
 	'badges'     => 'badge', 
 	'categories' => 'category', 
 	'tags'       => 'tag', 
-	'tasks'      => 'task'
+	'tasks'      => 'task', 
+	'user_tasks' => 'user_task'
 );
 
 $errors = array();

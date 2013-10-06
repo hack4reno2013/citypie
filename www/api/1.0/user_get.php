@@ -23,7 +23,8 @@ if (isset($query_parts[1])) {
 				'cities' => $user['cities'], 
 				'checks' => $user['checks'], 
 				'bookmarks' => $user['bookmarks'], 
-				'badges' => $user['badges']
+				'badges' => $user['badges'],
+				'tasks' => $user['tasks']
 			);
 		}
 		else {

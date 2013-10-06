@@ -30,7 +30,7 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
-		<string>GrandHotel.woff</string>
+		<string>GrandHotel.ttf</string>
 	</array>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>

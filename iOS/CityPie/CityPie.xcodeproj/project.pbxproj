@@ -14,7 +14,6 @@
 		B956231E1800849700E37552 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B956231C1800849700E37552 /* InfoPlist.strings */; };
 		B95623201800849700E37552 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B956231F1800849700E37552 /* main.m */; };
 		B95623241800849700E37552 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B95623231800849700E37552 /* AppDelegate.m */; };
-		B95623271800849700E37552 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B95623251800849700E37552 /* Main.storyboard */; };
 		B956232A1800849700E37552 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B95623291800849700E37552 /* ViewController.m */; };
 		B95623331800849700E37552 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95623321800849700E37552 /* XCTest.framework */; };
 		B95623341800849700E37552 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95623131800849700E37552 /* Foundation.framework */; };
@@ -46,6 +45,8 @@
 		B9F402F7180105F50032EA6A /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F402F6180105F50032EA6A /* SWRevealViewController.m */; };
 		B9F402FA18010B350032EA6A /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F402F918010B350032EA6A /* MenuViewController.m */; };
 		B9F402FC180117470032EA6A /* CityPie_logo_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = B9F402FB180117470032EA6A /* CityPie_logo_menu.png */; };
+		B9F402FF180120E00032EA6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B95623251800849700E37552 /* Main.storyboard */; };
+		B9F40300180120FC0032EA6A /* GrandHotel.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B9F402FE180120CC0032EA6A /* GrandHotel.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,7 +116,7 @@
 		B9F402F818010B350032EA6A /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		B9F402F918010B350032EA6A /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		B9F402FB180117470032EA6A /* CityPie_logo_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CityPie_logo_menu.png; sourceTree = "<group>"; };
-		B9F402FD18011F250032EA6A /* GrandHotel.woff */ = {isa = PBXFileReference; lastKnownFileType = file; name = GrandHotel.woff; path = XYPieChart/GrandHotel.woff; sourceTree = "<group>"; };
+		B9F402FE180120CC0032EA6A /* GrandHotel.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GrandHotel.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,7 +184,7 @@
 				B956236D1800A50F00E37552 /* JSONKit */,
 				B956236718009BFD00E37552 /* XYPieChart */,
 				B956234B180093E700E37552 /* CityPie.png */,
-				B9F402FD18011F250032EA6A /* GrandHotel.woff */,
+				B9F402FE180120CC0032EA6A /* GrandHotel.ttf */,
 				B956234F1800947E00E37552 /* CityPie@2x.png */,
 				B9F402F818010B350032EA6A /* MenuViewController.h */,
 				B9F402F918010B350032EA6A /* MenuViewController.m */,
@@ -387,12 +388,13 @@
 				B95623741800A50F00E37552 /* README.md in Resources */,
 				B9F402EB1800E7B80032EA6A /* 27AAE1.png in Resources */,
 				B956231E1800849700E37552 /* InfoPlist.strings in Resources */,
+				B9F40300180120FC0032EA6A /* GrandHotel.ttf in Resources */,
 				B95623501800947E00E37552 /* CityPie@2x.png in Resources */,
 				B9F402EF1800E8240032EA6A /* 532516.png in Resources */,
 				B9F402F11800E8760032EA6A /* EF4136.png in Resources */,
 				B9F402F31800E88C0032EA6A /* FBB040.png in Resources */,
+				B9F402FF180120E00032EA6A /* Main.storyboard in Resources */,
 				B9F402ED1800E8060032EA6A /* 662D91.png in Resources */,
-				B95623271800849700E37552 /* Main.storyboard in Resources */,
 				B9F402D61800DA3F0032EA6A /* menu_icon_tan.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

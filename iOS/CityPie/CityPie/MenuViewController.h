@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MenuViewController : UITableViewController
+@property (strong, nonatomic) IBOutlet UIButton *signup;
+@property (strong, nonatomic) IBOutlet UIButton *login;
 
 @end

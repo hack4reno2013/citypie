@@ -413,11 +413,21 @@ Cg
                             <rect key="frame" x="0.0" y="197" width="320" height="88"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Prj-rn-8f8">
-                                    <rect key="frame" x="48" y="29" width="46" height="30"/>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Prj-rn-8f8">
+                                    <rect key="frame" x="14" y="14" width="112" height="60"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                                    <state key="normal" title="Button">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
+                                    <state key="normal" title="Sign Up">
+                                        <color key="titleColor" red="0.6142578125" green="0.36150314540249479" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Riv-3z-kRe">
+                                    <rect key="frame" x="134" y="14" width="99" height="60"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
+                                    <state key="normal" title="Login">
+                                        <color key="titleColor" red="1" green="0.58126218688309017" blue="0.0038814999631308078" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                 </button>
@@ -432,7 +442,7 @@ Cg
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CityPie_logo_menu.png" translatesAutoresizingMaskIntoConstraints="NO" id="z95-ez-x2a">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CityPie_logo_menu.png" translatesAutoresizingMaskIntoConstraints="NO" id="z95-ez-x2a">
                                             <rect key="frame" x="20" y="4" width="181" height="38"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -489,6 +499,10 @@ Cg
                             <outlet property="delegate" destination="q4n-2C-ewr" id="lmP-5r-QPc"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="login" destination="Riv-3z-kRe" id="Cgy-IL-ZLN"/>
+                        <outlet property="signup" destination="Prj-rn-8f8" id="cyD-2A-h92"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oRg-JV-sUE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

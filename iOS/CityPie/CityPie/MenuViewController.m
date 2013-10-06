@@ -26,7 +26,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    self.signup.font = [UIFont fontWithName:@"Grand Hotel" size:36];
+    [self.signup setTitleColor:[UIColor colorWithRed:44/255.0 green:44/255.0 blue:46/255.0 alpha:1] forState:UIControlStateNormal];
+    self.login.font = [UIFont fontWithName:@"Grand Hotel" size:36];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  

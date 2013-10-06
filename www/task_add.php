@@ -22,8 +22,8 @@ $description = null;
 $requirement = null;
 $latlon = 'Reno, NV';
 
-if ( strtolower($_SERVER['REQUEST_METHOD']) == 'post') {
-	
+if ( strtolower($_SERVER['REQUEST_METHOD']) == 'post' || strtolower($_SERVER['REDIRECT_REQUEST_METHOD']) == 'post' ) {
+
 	if ( strlen($_POST['category']) > 0  ) {
 		# FIXME: validate
 		$category = $_POST['category'];

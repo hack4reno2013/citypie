@@ -33,4 +33,7 @@
 - (IBAction)login:(id)sender {
     
 }
+- (IBAction)cancle:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

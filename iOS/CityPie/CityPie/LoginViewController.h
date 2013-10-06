@@ -11,5 +11,6 @@
 @interface LoginViewController : UIViewController
 - (IBAction)login:(id)sender;
 @property (strong, nonatomic) IBOutlet UIButton *logMeIn;
+- (IBAction)cancle:(id)sender;
 
 @end

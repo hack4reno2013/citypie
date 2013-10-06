@@ -189,7 +189,7 @@
     NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
     NSLog(@"%@", imageData);
     if (imageData == NULL) {
-        UIImage *image = [UIImage imageNamed:@"slice_profice"];
+        UIImage *image = [UIImage imageNamed:@"slice_profile_small"];
         self.medallionView = [[AGMedallionView alloc] initWithFrame:CGRectMake(10, 10, 135, 140)];
         self.medallionView.image = image;
     }else{
@@ -199,9 +199,9 @@
     }
     
     [self.userInfoView addSubview:self.medallionView];
-    self.citiesLabel.text = [NSString stringWithFormat:@"%i",[[[jsonData objectForKey:@"data"] objectForKey:@"cities"] integerValue]];
-    self.checksLabel.text = [NSString stringWithFormat:@"%i",[[[jsonData objectForKey:@"data"] objectForKey:@"checks"] integerValue]];
-    self.bookmarksLabel.text = [NSString stringWithFormat:@"%i",[[[jsonData objectForKey:@"data"] objectForKey:@"bookmarks"] integerValue] ];
+    self.citiesLabel.text = [NSString stringWithFormat:@"%li",(long)[[[jsonData objectForKey:@"data"] objectForKey:@"cities"] integerValue]];
+    self.checksLabel.text = [NSString stringWithFormat:@"%li",(long)[[[jsonData objectForKey:@"data"] objectForKey:@"checks"] integerValue]];
+    self.bookmarksLabel.text = [NSString stringWithFormat:@"%li",(long)[[[jsonData objectForKey:@"data"] objectForKey:@"bookmarks"] integerValue] ];
     double unixTimeStamp = [[[jsonData objectForKey:@"data"] objectForKey:@"created"] doubleValue];
     NSTimeInterval _interval=unixTimeStamp;
     NSDate *date = [NSDate dateWithTimeIntervalSince1970:_interval];
@@ -210,6 +210,8 @@
     [_formatter setDateFormat:@"dd.MM.yyyy"];
     NSString *_date=[_formatter stringFromDate:date];
     self.createdLabel.text = _date;
+    [self.view addGestureRecognizer: self.revealViewController.panGestureRecognizer];
+
     /*if (error) {
         NSLog(@"%@",error.localizedDescription);
         NSLog(@"%@",[[NSString alloc] initWithData:self.receivedData encoding:NSUTF8StringEncoding]);

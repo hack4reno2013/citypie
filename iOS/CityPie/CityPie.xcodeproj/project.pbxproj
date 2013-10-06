@@ -31,13 +31,13 @@
 		B9D8DDC61801C02C008E0F3D /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D8DDC51801C02C008E0F3D /* LoginViewController.m */; };
 		B9D8DDCB1801C504008E0F3D /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D8DDCA1801C504008E0F3D /* SignupViewController.m */; };
 		B9D8DDCE1801D88A008E0F3D /* PostCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D8DDCD1801D88A008E0F3D /* PostCreateViewController.m */; };
-		B9D8DDD01801D90D008E0F3D /* slice_profice.png in Resources */ = {isa = PBXBuildFile; fileRef = B9D8DDCF1801D90D008E0F3D /* slice_profice.png */; };
 		B9D8DDD31801E3CA008E0F3D /* LeaderboaedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D8DDD21801E3CA008E0F3D /* LeaderboaedViewController.m */; };
 		B9D8DDD61801EB36008E0F3D /* libSVGKit-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D8DDD51801EB36008E0F3D /* libSVGKit-iOS.a */; };
 		B9D8DE441801EC02008E0F3D /* menu_icon.svg in Resources */ = {isa = PBXBuildFile; fileRef = B9D8DE431801EC02008E0F3D /* menu_icon.svg */; };
 		B9D8DE461801EC88008E0F3D /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D8DE451801EC88008E0F3D /* libxml2.dylib */; };
 		B9D8DE481801ECEF008E0F3D /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D8DE471801ECEF008E0F3D /* CoreText.framework */; };
 		B9D8DE4A1801ECFB008E0F3D /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D8DE491801ECFB008E0F3D /* CoreImage.framework */; };
+		B9D8DE4C1801F92E008E0F3D /* slice_profile_small.png in Resources */ = {isa = PBXBuildFile; fileRef = B9D8DE4B1801F92E008E0F3D /* slice_profile_small.png */; };
 		B9F402CF1800C2840032EA6A /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F402CE1800C2840032EA6A /* UserViewController.m */; };
 		B9F402D41800CECD0032EA6A /* AGMedallionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F402D31800CECD0032EA6A /* AGMedallionView.m */; };
 		B9F402D61800DA3F0032EA6A /* menu_icon_tan.png in Resources */ = {isa = PBXBuildFile; fileRef = B9F402D51800DA3F0032EA6A /* menu_icon_tan.png */; };
@@ -105,7 +105,6 @@
 		B9D8DDCA1801C504008E0F3D /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
 		B9D8DDCC1801D88A008E0F3D /* PostCreateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCreateViewController.h; sourceTree = "<group>"; };
 		B9D8DDCD1801D88A008E0F3D /* PostCreateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCreateViewController.m; sourceTree = "<group>"; };
-		B9D8DDCF1801D90D008E0F3D /* slice_profice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slice_profice.png; sourceTree = "<group>"; };
 		B9D8DDD11801E3CA008E0F3D /* LeaderboaedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaderboaedViewController.h; sourceTree = "<group>"; };
 		B9D8DDD21801E3CA008E0F3D /* LeaderboaedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderboaedViewController.m; sourceTree = "<group>"; };
 		B9D8DDD51801EB36008E0F3D /* libSVGKit-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libSVGKit-iOS.a"; path = "../../../../Library/Developer/Xcode/DerivedData/SVGKit-iOS-fpxzywqarnypyrhdrlxtxnrdtnmc/Build/Products/Debug-iphoneos/libSVGKit-iOS.a"; sourceTree = "<group>"; };
@@ -220,6 +219,7 @@
 		B9D8DE451801EC88008E0F3D /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		B9D8DE471801ECEF008E0F3D /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		B9D8DE491801ECFB008E0F3D /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		B9D8DE4B1801F92E008E0F3D /* slice_profile_small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = slice_profile_small.png; sourceTree = "<group>"; };
 		B9F402CD1800C2840032EA6A /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
 		B9F402CE1800C2840032EA6A /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
 		B9F402D01800C2B30032EA6A /* globals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = globals.h; sourceTree = "<group>"; };
@@ -409,8 +409,8 @@
 		B9D8DDC81801C046008E0F3D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B9D8DE4B1801F92E008E0F3D /* slice_profile_small.png */,
 				B9D8DE431801EC02008E0F3D /* menu_icon.svg */,
-				B9D8DDCF1801D90D008E0F3D /* slice_profice.png */,
 				B956234B180093E700E37552 /* CityPie.png */,
 				B9F402FE180120CC0032EA6A /* GrandHotel.ttf */,
 				B956234F1800947E00E37552 /* CityPie@2x.png */,
@@ -661,12 +661,12 @@
 			files = (
 				B956234D180093E700E37552 /* CityPie.png in Resources */,
 				B95623721800A50F00E37552 /* CHANGELOG.md in Resources */,
+				B9D8DE4C1801F92E008E0F3D /* slice_profile_small.png in Resources */,
 				B9F402E91800E75A0032EA6A /* 00A651.png in Resources */,
 				B9F402FC180117470032EA6A /* CityPie_logo_menu.png in Resources */,
 				B9562352180094D500E37552 /* Images.xcassets in Resources */,
 				B953DE5B1800BD1C001F8172 /* menu_icon_white.png in Resources */,
 				B95623741800A50F00E37552 /* README.md in Resources */,
-				B9D8DDD01801D90D008E0F3D /* slice_profice.png in Resources */,
 				B9F402EB1800E7B80032EA6A /* 27AAE1.png in Resources */,
 				B956231E1800849700E37552 /* InfoPlist.strings in Resources */,
 				B9F40300180120FC0032EA6A /* GrandHotel.ttf in Resources */,

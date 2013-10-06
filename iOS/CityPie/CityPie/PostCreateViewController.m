@@ -37,9 +37,11 @@
     self.navigationItem.leftBarButtonItem = self.revealButtonItem;
     self.navigationController.navigationBar.titleTextAttributes = @{UITextAttributeTextColor :[UIColor whiteColor], UITextAttributeFont: [UIFont fontWithName:@"Helvetica" size:20]};
     self.revealButtonItem.tintColor = [UIColor whiteColor];
-    [self.navigationController.navigationBar addGestureRecognizer: self.revealViewController.panGestureRecognizer];
+    [self.navigationController.navigationBar addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:49/255.0f green:49/255.0f blue:49/255.0f alpha:1]];
     [self setEdgesForExtendedLayout:UIRectEdgeNone];
+    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+
 }
 
 - (void)didReceiveMemoryWarning

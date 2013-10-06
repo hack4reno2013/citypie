@@ -66,6 +66,8 @@
     menuView.backgroundColor = [UIColor colorWithRed:245/255.0f green:238/255.0f blue:228/255.0f alpha:1];
     
     [self.navigationController.navigationBar addGestureRecognizer: self.revealViewController.panGestureRecognizer];
+    [self.view addGestureRecognizer: self.revealViewController.panGestureRecognizer];
+
     [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:49/255.0f green:49/255.0f blue:49/255.0f alpha:1]];
     [self setEdgesForExtendedLayout:UIRectEdgeNone];
 }

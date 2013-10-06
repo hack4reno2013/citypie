@@ -15,4 +15,5 @@
 @property (strong, nonatomic) IBOutlet UITextField *userEmail;
 @property (strong, nonatomic) IBOutlet UITextField *userPassword;
 @property (strong, nonatomic) NSMutableData *responseData;
+- (IBAction)cancel:(id)sender;
 @end

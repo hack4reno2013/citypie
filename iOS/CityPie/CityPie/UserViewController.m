@@ -23,12 +23,15 @@
 
 - (void)viewDidLoad
 {
+    
     self.slices = [NSMutableArray arrayWithCapacity:10];
-    self.revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu_icon_white"] style:UIBarButtonItemStyleBordered target:self.revealViewController action:@selector(revealToggle:)];
+    UIImage *menuImage = [SVGKImage imageNamed:@"menu_icon.svg"].UIImage;
+
+    self.revealButtonItem = [[UIBarButtonItem alloc] initWithImage:menuImage style:UIBarButtonItemStyleBordered target:self.revealViewController action:@selector(revealToggle:)];
     self.navigationItem.leftBarButtonItem = self.revealButtonItem;
     self.navigationController.navigationBar.titleTextAttributes = @{UITextAttributeTextColor :[UIColor whiteColor], UITextAttributeFont: [UIFont fontWithName:@"Helvetica" size:20]};
     self.revealButtonItem.tintColor = [UIColor whiteColor];
-
+    [self.menuButton setImage:menuImage forState:UIControlStateNormal];
     NSNumber *entertainment = [NSNumber numberWithInt:10];
     NSNumber *outdoor = [NSNumber numberWithInt:20];
     NSNumber *industry = [NSNumber numberWithInt:30];
@@ -43,6 +46,7 @@
     self.menuView.backgroundColor = [UIColor colorWithRed:245/255.0f green:238/255.0f blue:228/255.0f alpha:1];
     [self.userInfoView setHidden:YES];
     [self.menuView setHidden:YES];
+    [self.webView setHidden:YES];
     [self.loadingIndicator startAnimating];
     [self.pieChartLeft setDataSource:self];
     //[self.pieChartLeft setStartPieAngle:M_PI_2];
@@ -138,7 +142,8 @@
     
     NSLog(@"loadData...");
     self.receivedData = [[NSMutableData alloc] init];
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_USER, USER_ID]];
+    NSUserDefaults *storage = [NSUserDefaults standardUserDefaults];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_USER, [storage objectForKey:@"user_id"]]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: url cachePolicy: NSURLRequestUseProtocolCachePolicy timeoutInterval: 360.0];
     [NSURLConnection connectionWithRequest:request delegate:self];
     
@@ -166,9 +171,14 @@
 
 
 -(void) connectionDidFinishLoading:(NSURLConnection *)connection {
+    NSString *urlAddress = @"http://citypie.us/user/posts";
+    NSURL *url = [NSURL URLWithString:urlAddress];
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+    [self.webView loadRequest:requestObj];
     [self.loadingIndicator stopAnimating];
     [self.userInfoView setHidden:NO];
     [self.menuView setHidden:NO];
+    [self.webView setHidden:NO];
     NSLog(@"connectionDidFinishLoading...");
     NSError *error = nil;
     //id result = [NSJSONSerialization JSONObjectWithData:self.receivedData options:kNilOptions error:&error];
@@ -177,9 +187,17 @@
    // self.userImage = [[jsonData objectForKey:@"data"] objectForKey:@"pic"];
     NSURL * imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", BASE, [[jsonData objectForKey:@"data"] objectForKey:@"pic"]]];
     NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
-    UIImage * image = [UIImage imageWithData:imageData];
-    self.medallionView = [[AGMedallionView alloc] initWithFrame:CGRectMake(10, 10, 135, 140)];
-    self.medallionView.image = image;
+    NSLog(@"%@", imageData);
+    if (imageData == NULL) {
+        UIImage *image = [UIImage imageNamed:@"slice_profice"];
+        self.medallionView = [[AGMedallionView alloc] initWithFrame:CGRectMake(10, 10, 135, 140)];
+        self.medallionView.image = image;
+    }else{
+        UIImage *image = [UIImage imageWithData:imageData];
+        self.medallionView = [[AGMedallionView alloc] initWithFrame:CGRectMake(10, 10, 135, 140)];
+        self.medallionView.image = image;
+    }
+    
     [self.userInfoView addSubview:self.medallionView];
     self.citiesLabel.text = [NSString stringWithFormat:@"%i",[[[jsonData objectForKey:@"data"] objectForKey:@"cities"] integerValue]];
     self.checksLabel.text = [NSString stringWithFormat:@"%i",[[[jsonData objectForKey:@"data"] objectForKey:@"checks"] integerValue]];

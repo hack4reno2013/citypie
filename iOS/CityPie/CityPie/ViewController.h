@@ -10,7 +10,7 @@
 #import "XYPieChart.h"
 #import "MenuViewController.h"
 #import "REMenu.h"
-
+#import "SVGKit.h"
 @interface ViewController : UIViewController <XYPieChartDataSource, XYPieChartDelegate>{
 }
 - (IBAction)reloadData:(id)sender;
@@ -25,5 +25,6 @@
 @property(nonatomic, strong) NSArray        *sliceColors;
 -(IBAction)toggleLeftSlide:(id)sender;
 -(IBAction)showMenu:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *menuButton;
 @property (strong, nonatomic) IBOutlet UILabel *catLabel;
 @end

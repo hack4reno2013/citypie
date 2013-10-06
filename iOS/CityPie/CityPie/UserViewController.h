@@ -12,6 +12,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "XYPieChart.h"
 #import "REMenu.h"
+#import "SVGKit.h"
 @interface UserViewController : UIViewController <XYPieChartDataSource,XYPieChartDelegate>
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
 
@@ -28,7 +29,10 @@
 @property (strong, nonatomic) IBOutlet XYPieChart *pieChartLeft;
 @property (strong, nonatomic) IBOutlet UIView *menuView;
 @property (strong, nonatomic) IBOutlet UIActivityIndicatorView *loadingIndicator;
+@property (strong, nonatomic) IBOutlet UIButton *menuButton;
+
 @property (strong, nonatomic) IBOutlet UILabel *catLabel;
 @property(nonatomic, strong) REMenu *menu;
 -(IBAction)showMenu:(id)sender;
+@property (strong, nonatomic) IBOutlet UIWebView *webView;
 @end

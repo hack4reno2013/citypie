@@ -22,7 +22,8 @@
     //self.userImage.layer.cornerRadius = self.u.size.width / 2;
     //self.userImage.layer.masksToBounds = YES;
     self.userInfoView.backgroundColor = [UIColor colorWithRed:245/255.0f green:238/255.0f blue:228/255.0f alpha:1];
-
+    [self.userInfoView setHidden:YES];
+    [self.loadingIndicator startAnimating];
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,6 +63,8 @@
 
 
 -(void) connectionDidFinishLoading:(NSURLConnection *)connection {
+    [self.loadingIndicator stopAnimating];
+    [self.userInfoView setHidden:NO];
     NSLog(@"connectionDidFinishLoading...");
     NSError *error = nil;
     //id result = [NSJSONSerialization JSONObjectWithData:self.receivedData options:kNilOptions error:&error];
@@ -71,9 +74,20 @@
     NSURL * imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", BASE, [[jsonData objectForKey:@"data"] objectForKey:@"pic"]]];
     NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
     UIImage * image = [UIImage imageWithData:imageData];
-    self.userImage.layer.cornerRadius = image.size.width / 8;
-    self.userImage.layer.masksToBounds = YES;
-    self.userImage.image = image;
+    self.medallionView = [[AGMedallionView alloc] initWithFrame:CGRectMake(5, 15, 135, 140)];
+    self.medallionView.image = image;
+    [self.userInfoView addSubview:self.medallionView];
+    self.citiesLabel.text = [NSString stringWithFormat:@"%i",[[[jsonData objectForKey:@"data"] objectForKey:@"cities"] integerValue]];
+    self.checksLabel.text = [NSString stringWithFormat:@"%i",[[[jsonData objectForKey:@"data"] objectForKey:@"checks"] integerValue]];
+    self.bookmarksLabel.text = [NSString stringWithFormat:@"%i",[[[jsonData objectForKey:@"data"] objectForKey:@"bookmarks"] integerValue] ];
+    double unixTimeStamp = [[[jsonData objectForKey:@"data"] objectForKey:@"created"] doubleValue];
+    NSTimeInterval _interval=unixTimeStamp;
+    NSDate *date = [NSDate dateWithTimeIntervalSince1970:_interval];
+    NSDateFormatter *_formatter=[[NSDateFormatter alloc]init];
+    [_formatter setLocale:[NSLocale currentLocale]];
+    [_formatter setDateFormat:@"dd.MM.yyyy"];
+    NSString *_date=[_formatter stringFromDate:date];
+    self.createdLabel.text = _date;
     /*if (error) {
         NSLog(@"%@",error.localizedDescription);
         NSLog(@"%@",[[NSString alloc] initWithData:self.receivedData encoding:NSUTF8StringEncoding]);

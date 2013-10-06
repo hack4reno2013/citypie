@@ -13,7 +13,7 @@
 @end
 
 @implementation ViewController
-@synthesize chartView;
+@synthesize chartView, menuView;
 // UIColor from hex, pretty much
 - (UIColor *)colorFromHexString:(NSString *)hexString {
     unsigned rgbValue = 0;
@@ -46,21 +46,14 @@
     [self.pieChartLeft setAnimationSpeed:1.0];
     [self.pieChartLeft setShowPercentage:NO];
     [self.pieChartLeft setPieBackgroundColor:[UIColor colorWithRed:245/255.0f green:238/255.0f blue:228/255.0f alpha:1]];
-    [self.pieChartLeft setPieCenter:CGPointMake(70, 87)];
+    [self.pieChartLeft setPieCenter:CGPointMake(70, 73)];
     [self.pieChartLeft setUserInteractionEnabled:NO];
     self.pieChartLeft.showLabel = NO;
     self.sliceColors =[NSArray arrayWithObjects:[self colorFromHexString:@"#00A651"],[self colorFromHexString:@"#27AAE1"],[self colorFromHexString:@"#662D91"],[self colorFromHexString:@"#532516"],[self colorFromHexString:@"#FBB040"],[self colorFromHexString:@"#EF4136"], nil];
 
     chartView.backgroundColor = [UIColor colorWithRed:245/255.0f green:238/255.0f blue:228/255.0f alpha:1];
-    
-    //UIBarButtonItem *leftButton = [[UIBarButtonItem alloc] initWithImage:<#(UIImage *)#> style:<#(UIBarButtonItemStyle)#> target:<#(id)#> action:<#(SEL)#>];
-   // self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"<" style:UIBarButtonItemStyleBordered target:self.viewDeckController action:@selector(toggleLeftView)];
-    /*self.leftNavItem = [[UIBarButtonItem alloc] init];
-    self.leftNavItem.image = [UIImage imageNamed:@"menu_icon_white.png"];
-    [self.leftNavItem setTarget:self];
-    [self.leftNavItem setAction:@selector(toggleLeftSlide:)];
-    [self.leftNavItem setTintColor:[UIColor whiteColor]];
-    self.navigationItem.leftBarButtonItem = self.leftNavItem;*/
+    menuView.backgroundColor = [UIColor colorWithRed:245/255.0f green:238/255.0f blue:228/255.0f alpha:1];
+
 }
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
@@ -75,9 +68,57 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-// JSON download, and parse!
--(void)parsejson{
+//Setup Menu
+-(IBAction)showMenu:(id)sender{
+    REMenuItem *outdoorItem = [[REMenuItem alloc] initWithTitle:@"Outdoor"
+                                                       image:[UIImage imageNamed:@"00A651"]
+                                            highlightedImage:nil
+                                                      action:^(REMenuItem *item) {
+                                                          NSLog(@"Item: %@", item);
+                                                      }];
     
+    REMenuItem *industryItem = [[REMenuItem alloc] initWithTitle:@"Industry"
+                                                          image:[UIImage imageNamed:@"27AAE1"]
+                                               highlightedImage:nil
+                                                         action:^(REMenuItem *item) {
+                                                             NSLog(@"Item: %@", item);
+                                                         }];
+    
+    REMenuItem *volunteerItem = [[REMenuItem alloc] initWithTitle:@"Volunteer"
+                                                           image:[UIImage imageNamed:@"662D91"]
+                                                highlightedImage:nil
+                                                          action:^(REMenuItem *item) {
+                                                              NSLog(@"Item: %@", item);
+                                                          }];
+    
+    REMenuItem *historyItem = [[REMenuItem alloc] initWithTitle:@"History"
+                                                          image:[UIImage imageNamed:@"532516"]
+                                               highlightedImage:nil
+                                                         action:^(REMenuItem *item) {
+                                                             NSLog(@"Item: %@", item);
+                                                         }];
+    REMenuItem *foodItem = [[REMenuItem alloc] initWithTitle:@"Food"
+                                                          image:[UIImage imageNamed:@"FBB040"]
+                                               highlightedImage:nil
+                                                         action:^(REMenuItem *item) {
+                                                             NSLog(@"Item: %@", item);
+                                                         }];
+    REMenuItem *entertainmentItem = [[REMenuItem alloc] initWithTitle:@"Entertainment"
+                                                       image:[UIImage imageNamed:@"EF4136"]
+                                            highlightedImage:nil
+                                                      action:^(REMenuItem *item) {
+                                                          NSLog(@"Item: %@", item);
+                                                      }];
+
+    
+    NSLog(@"%@", self.menu);
+    if(self.menu){
+        [self.menu close];
+        self.menu = nil;
+    }else{
+        self.menu = [[REMenu alloc] initWithItems:@[outdoorItem, industryItem, volunteerItem, historyItem, foodItem, entertainmentItem]];
+        [self.menu showFromRect:CGRectMake(0, 197, 320, 420) inView:self.view];
+    }
 }
 
 #pragma mark - XYPieChart Data Source

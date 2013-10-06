@@ -22,7 +22,16 @@ $description = null;
 $requirement = null;
 $latlon = 'Reno, NV';
 
-if ( strtolower($_SERVER['REQUEST_METHOD']) == 'post' || strtolower($_SERVER['REDIRECT_REQUEST_METHOD']) == 'post' ) {
+# deal with apache hassles
+$update = false;
+if ( isset($_SERVER['REQUEST_METHOD']) && strtolower($_SERVER['REQUEST_METHOD']) == 'post' ) {
+	$update = true;
+}
+elseif ( isset($_SERVER['REDIRECT_REQUEST_METHOD']) && strtolower($_SERVER['REDIRECT_REQUEST_METHOD']) == 'post' ) {
+	$update = true;
+}
+
+if ( $update ) {
 
 	if ( strlen($_POST['category']) > 0  ) {
 		# FIXME: validate
@@ -61,6 +70,9 @@ if ( strtolower($_SERVER['REQUEST_METHOD']) == 'post' || strtolower($_SERVER['RE
 				$errors[] = 'Please set the requirement location';
 			}
 		}
+		elseif ($requirement == 'scan') {
+			$requirement = 'scan';
+		}
 
 	}
 	else {
@@ -77,9 +89,19 @@ if ( strtolower($_SERVER['REQUEST_METHOD']) == 'post' || strtolower($_SERVER['RE
 				'geo' => array($lat, $lon)
 			);
 		}
+		elseif ( $requirement == 'scan' ) {
+			$data['requirements'][] = array('scan' => 1);
+		}
+		$data['created'] = new MongoDate();
 		$tasks = $db->tasks;
 		$tasks->insert($data);
 		$notices[] = "Task Added";
+		
+		if ( $requirement == 'scan' ) {
+			$redir = UrlEncode('http://' . $_SERVER['HTTP_HOST'] . '/qr/' .  $data['_id']);
+			header("Location: http://chart.apis.google.com/chart?cht=qr&chs=300x300&chl=" . $redir . "&chld=H|0");
+			exit;
+		}
 
 		# empty these out
 		$category = null;
@@ -108,10 +130,24 @@ if ( strtolower($_SERVER['REQUEST_METHOD']) == 'post' || strtolower($_SERVER['RE
 			color: rgb(65,65,65);
 		}
 		
+		#geo_block {
+			display: none;
+		}
+		
 	</style>
 	<script  type="text/javascript">
 	$(document).ready(function(){
 		jQuery('#lat').locationPicker();
+		
+		$('#requirement').change(function(){
+			if ( $(this).val() == 'geo' ) {
+				$('#geo_block').show();
+			}
+			else {
+				$('#geo_block').hide();
+			}
+		
+		});
 	});
 	</script>
 </head>
@@ -154,11 +190,14 @@ if ( strtolower($_SERVER['REQUEST_METHOD']) == 'post' || strtolower($_SERVER['RE
 		<select name="requirement" id="requirement">
 			<option value=""<?= ($requirement=='')?(' selected="selected"'):(''); ?>> - Choose the task type - </option>
 			<option value="geo"<?= ($requirement=='geo')?(' selected="selected"'):(''); ?>>Location</option>
+			<option value="scan"<?= ($requirement=='geo')?(' selected="selected"'):(''); ?>>QR Code</option>
 		</select>
 		
-		<label for="lat">Location</label>
-		<div class="note">(Click search to search map.  Double-click to set location)</div>
-		<input type="text" name="latlon" id="lat" value="<?= HtmlSpecialChars($latlon); ?>">
+		<div id="geo_block">
+			<label for="lat">Location</label>
+			<div class="note">(Click search to search map.  Double-click to set location)</div>
+			<input type="text" name="latlon" id="lat" value="<?= HtmlSpecialChars($latlon); ?>">
+		</div>
 
 		<input type="submit" value="Add">
 		

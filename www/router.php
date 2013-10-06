@@ -1,4 +1,5 @@
 <?
+http_response_code(200);
 
 $request_path = preg_replace(
 	'/^([^\?]+).*$/', 
@@ -17,6 +18,7 @@ switch ($request_path) {
 		$page = 'task_add.php';
 		break;
 	default:
+		http_response_code(404);
 		$page = '404.php';
 }
 

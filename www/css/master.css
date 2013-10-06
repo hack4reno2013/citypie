@@ -1,0 +1,78 @@
+body {
+	font-family: 'Helvetica Neue', Helvetica, Arial;
+	font-weight: 100;
+	background: rgb(245,238,228);
+}
+
+#wrapper {
+	margin: 0 auto;
+	width: 900px;
+}
+
+#left {
+	width: 50%;
+	float: left;
+}
+
+#landing_text {
+	margin-top: 200px;
+	font-family: 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', Arial, Helvetica;
+	color: rgb(65,65,65);
+}
+
+#welcome {
+	font-size: 5em;
+	color: #FBB040;
+}
+
+#right {
+	float: left;
+	margin: 0 5%;
+	width: 40%;
+}
+
+#right img {
+	margin-top: 250px;
+	margin-bottom: 20px;
+	margin-left: 30px;
+	width: 290px;
+}
+
+/************** buttons *************/
+
+.button_short {
+	font-weight: 600;
+	width: 100px;
+	padding: 8px 0;
+	border-radius: 35px;
+	text-align: center;
+}
+
+#signup_button {
+	background: rgb(194,181,155);
+	color: rgb(245,238,228);
+	float: left;
+	margin: 55px 0 0 55px;
+}
+
+#login_button {
+	background: #FBB040;
+	color: rgb(245,238,228);
+	float: right;
+	margin: 55px 55px 0 0;
+}
+
+
+/* font-family: 'Grand Hotel', cursive; */
+
+
+
+
+
+
+
+
+
+
+
+

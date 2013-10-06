@@ -25,7 +25,7 @@
 - (void)viewDidLoad
 {
     
-    NSString *urlAddress = @"http://citypie.us/stuff/WordSizer.php";
+    NSString *urlAddress = @"http://citypie.us/posts";
     NSURL *url = [NSURL URLWithString:urlAddress];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:requestObj];

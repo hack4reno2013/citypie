@@ -138,7 +138,8 @@
     
     NSLog(@"loadData...");
     self.receivedData = [[NSMutableData alloc] init];
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_USER, USER_ID]];
+    NSUserDefaults *storage = [NSUserDefaults standardUserDefaults];
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",API_USER, [storage objectForKey:@"user_id"]]];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL: url cachePolicy: NSURLRequestUseProtocolCachePolicy timeoutInterval: 360.0];
     [NSURLConnection connectionWithRequest:request delegate:self];
     
@@ -177,9 +178,17 @@
    // self.userImage = [[jsonData objectForKey:@"data"] objectForKey:@"pic"];
     NSURL * imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", BASE, [[jsonData objectForKey:@"data"] objectForKey:@"pic"]]];
     NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
-    UIImage * image = [UIImage imageWithData:imageData];
-    self.medallionView = [[AGMedallionView alloc] initWithFrame:CGRectMake(10, 10, 135, 140)];
-    self.medallionView.image = image;
+    NSLog(@"%@", imageData);
+    if (imageData == NULL) {
+        UIImage *image = [UIImage imageNamed:@"slice_profice"];
+        self.medallionView = [[AGMedallionView alloc] initWithFrame:CGRectMake(10, 10, 135, 140)];
+        self.medallionView.image = image;
+    }else{
+        UIImage *image = [UIImage imageWithData:imageData];
+        self.medallionView = [[AGMedallionView alloc] initWithFrame:CGRectMake(10, 10, 135, 140)];
+        self.medallionView.image = image;
+    }
+    
     [self.userInfoView addSubview:self.medallionView];
     self.citiesLabel.text = [NSString stringWithFormat:@"%i",[[[jsonData objectForKey:@"data"] objectForKey:@"cities"] integerValue]];
     self.checksLabel.text = [NSString stringWithFormat:@"%i",[[[jsonData objectForKey:@"data"] objectForKey:@"checks"] integerValue]];

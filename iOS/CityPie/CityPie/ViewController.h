@@ -10,7 +10,7 @@
 #import "XYPieChart.h"
 #import "MenuViewController.h"
 #import "REMenu.h"
-
+#import "SVGKit.h"
 @interface ViewController : UIViewController <XYPieChartDataSource, XYPieChartDelegate>{
 }
 - (IBAction)reloadData:(id)sender;

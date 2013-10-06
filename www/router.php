@@ -1,4 +1,5 @@
 <?
+header("HTTP/1.0 200 OK");
 
 $request_path = preg_replace(
 	'/^([^\?]+).*$/', 
@@ -7,10 +8,17 @@ $request_path = preg_replace(
 );
 
 switch ($request_path) {
-	case '/about':
-		$page = 'about.php';
+	case '/signup':
+		$page = 'signup.php';
+		break;
+	case '/login':
+		$page = 'login.php';
+		break;
+	case '/task/add':
+		$page = 'task_add.php';
 		break;
 	default:
+		header("HTTP/1.0 404 Not Found");
 		$page = '404.php';
 }
 

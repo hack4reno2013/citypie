@@ -24,6 +24,14 @@
 }
 - (void)viewDidLoad
 {
+    
+    NSString *urlAddress = @"http://citypie.us/stuff/WordSizer.php";
+    NSURL *url = [NSURL URLWithString:urlAddress];
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+    [self.webView loadRequest:requestObj];
+    self.navigationController.navigationBar.titleTextAttributes = @{UITextAttributeTextColor :[UIColor whiteColor], UITextAttributeFont: [UIFont fontWithName:@"GrandHotel" size:20]};
+    self.revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu_icon_white"] style:UIBarButtonItemStyleBordered target:self.revealViewController action:@selector(revealToggle:)];
+    self.navigationItem.leftBarButtonItem = self.revealButtonItem;
     self.slices = [NSMutableArray arrayWithCapacity:10];
     
     NSNumber *entertainment = [NSNumber numberWithInt:10];
@@ -53,15 +61,18 @@
 
     chartView.backgroundColor = [UIColor colorWithRed:245/255.0f green:238/255.0f blue:228/255.0f alpha:1];
     menuView.backgroundColor = [UIColor colorWithRed:245/255.0f green:238/255.0f blue:228/255.0f alpha:1];
-
+    
+    [self.navigationController.navigationBar addGestureRecognizer: self.revealViewController.panGestureRecognizer];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:49/255.0f green:49/255.0f blue:49/255.0f alpha:1]];
+    [self setEdgesForExtendedLayout:UIRectEdgeNone];
 }
+
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [self.pieChartLeft reloadData];
 }
 -(IBAction)toggleLeftSlide:(id)sender {
     NSLog(@"Go...");
-    [self.viewDeckController toggleLeftViewAnimated:YES completion:nil];
 }
 - (void)didReceiveMemoryWarning
 {
@@ -70,54 +81,76 @@
 }
 //Setup Menu
 -(IBAction)showMenu:(id)sender{
+    REMenuItem *allItem = [[REMenuItem alloc] initWithTitle:@"All"
+                                                          image:nil
+                                                         highlightedImage:nil
+                                                         action:^(REMenuItem *item) {
+                                                             NSLog(@"Item: %@", item);
+                                                             self.catLabel.text = item.title;
+                                                         }];
     REMenuItem *outdoorItem = [[REMenuItem alloc] initWithTitle:@"Outdoor"
-                                                       image:[UIImage imageNamed:@"00A651"]
-                                            highlightedImage:nil
-                                                      action:^(REMenuItem *item) {
-                                                          NSLog(@"Item: %@", item);
-                                                      }];
-    
-    REMenuItem *industryItem = [[REMenuItem alloc] initWithTitle:@"Industry"
-                                                          image:[UIImage imageNamed:@"27AAE1"]
+                                                          image:[UIImage imageNamed:@"00A651"]
                                                highlightedImage:nil
                                                          action:^(REMenuItem *item) {
                                                              NSLog(@"Item: %@", item);
+                                                             self.catLabel.text = item.title;
                                                          }];
     
-    REMenuItem *volunteerItem = [[REMenuItem alloc] initWithTitle:@"Volunteer"
-                                                           image:[UIImage imageNamed:@"662D91"]
+    REMenuItem *industryItem = [[REMenuItem alloc] initWithTitle:@"Industry"
+                                                           image:[UIImage imageNamed:@"27AAE1"]
                                                 highlightedImage:nil
                                                           action:^(REMenuItem *item) {
                                                               NSLog(@"Item: %@", item);
+                                                              self.catLabel.text = item.title;
+                                                              
                                                           }];
+    
+    REMenuItem *volunteerItem = [[REMenuItem alloc] initWithTitle:@"Volunteer"
+                                                            image:[UIImage imageNamed:@"662D91"]
+                                                 highlightedImage:nil
+                                                           action:^(REMenuItem *item) {
+                                                               NSLog(@"Item: %@", item);
+                                                               self.catLabel.text = item.title;
+                                                               
+                                                           }];
     
     REMenuItem *historyItem = [[REMenuItem alloc] initWithTitle:@"History"
                                                           image:[UIImage imageNamed:@"532516"]
                                                highlightedImage:nil
                                                          action:^(REMenuItem *item) {
                                                              NSLog(@"Item: %@", item);
+                                                             self.catLabel.text = item.title;
+                                                             
                                                          }];
     REMenuItem *foodItem = [[REMenuItem alloc] initWithTitle:@"Food"
-                                                          image:[UIImage imageNamed:@"FBB040"]
-                                               highlightedImage:nil
-                                                         action:^(REMenuItem *item) {
-                                                             NSLog(@"Item: %@", item);
-                                                         }];
-    REMenuItem *entertainmentItem = [[REMenuItem alloc] initWithTitle:@"Entertainment"
-                                                       image:[UIImage imageNamed:@"EF4136"]
+                                                       image:[UIImage imageNamed:@"FBB040"]
                                             highlightedImage:nil
                                                       action:^(REMenuItem *item) {
                                                           NSLog(@"Item: %@", item);
+                                                          self.catLabel.text = item.title;
+                                                          
                                                       }];
+    REMenuItem *entertainmentItem = [[REMenuItem alloc] initWithTitle:@"Entertainment"
+                                                                image:[UIImage imageNamed:@"EF4136"]
+                                                     highlightedImage:nil
+                                                               action:^(REMenuItem *item) {
+                                                                   NSLog(@"Item: %@", item);
+                                                                   self.catLabel.text = item.title;
+                                                                   
+                                                                   
+                                                               }];
+    
 
     
-    NSLog(@"%@", self.menu);
-    if(self.menu){
+    NSLog(@"%d", [self.menu isOpen]);
+    
+    if([self.menu  isOpen] == YES){
         [self.menu close];
         self.menu = nil;
     }else{
-        self.menu = [[REMenu alloc] initWithItems:@[outdoorItem, industryItem, volunteerItem, historyItem, foodItem, entertainmentItem]];
+        self.menu = [[REMenu alloc] initWithItems:@[allItem,outdoorItem, industryItem, volunteerItem, historyItem, foodItem, entertainmentItem]];
         [self.menu showFromRect:CGRectMake(0, 197, 320, 420) inView:self.view];
+        
     }
 }
 
@@ -157,4 +190,7 @@
 }
 
 
+- (IBAction)reloadData:(id)sender {
+    [self.webView reload];
+}
 @end

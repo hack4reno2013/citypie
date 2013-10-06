@@ -53,7 +53,7 @@
     if ((self = [super init])) {
         self.imageAlignment = REMenuImageAlignmentLeft;
         self.closeOnSelection = YES;
-        self.itemHeight = 48.0;
+        self.itemHeight = 40.5;
         self.separatorHeight = 2.0;
         self.waitUntilAnimationIsComplete = YES;
         

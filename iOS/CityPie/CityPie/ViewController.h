@@ -8,14 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "XYPieChart.h"
-#import "IIViewDeckController.h"
 #import "MenuViewController.h"
 #import "REMenu.h"
 
 @interface ViewController : UIViewController <XYPieChartDataSource, XYPieChartDelegate>{
 }
+- (IBAction)reloadData:(id)sender;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
 @property (strong, nonatomic) IBOutlet UIView *chartView;
 @property (strong, nonatomic) IBOutlet UIView *menuView;
+@property (strong, nonatomic) IBOutlet UIWebView *webView;
 @property (strong, nonatomic) IBOutlet XYPieChart *pieChartLeft;
 @property (strong,nonatomic) IBOutlet UIBarButtonItem *leftNavItem;
 @property(nonatomic, strong) REMenu *menu;
@@ -23,4 +25,5 @@
 @property(nonatomic, strong) NSArray        *sliceColors;
 -(IBAction)toggleLeftSlide:(id)sender;
 -(IBAction)showMenu:(id)sender;
+@property (strong, nonatomic) IBOutlet UILabel *catLabel;
 @end

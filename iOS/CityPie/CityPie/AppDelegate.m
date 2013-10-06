@@ -12,9 +12,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    MenuViewController *leftView = [[MenuViewController alloc] init];
-    ViewController *middleView = [[ViewController alloc] init];
-    IIViewDeckController* deckController =  [[IIViewDeckController alloc] initWithCenterViewController:middleView leftViewController:leftView rightViewController:nil];
+  
 
     return YES;
 }

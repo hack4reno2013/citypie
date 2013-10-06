@@ -87,8 +87,8 @@ switch($request->getMethod()) {
 		# PUT vars to POST vars
 		$_POST = $request->getRequestVars();
 
-		if ( file_exists($noun . "_put.php") ) {
-			require_once($noun . "_put.php");
+		if ( file_exists($model_name . "_put.php") ) {
+			require_once($model_name . "_put.php");
 		}
 		else {
 			# dunno what you want
@@ -102,12 +102,22 @@ switch($request->getMethod()) {
 
 	# delete existing record
 	case 'delete':
-		RestUtils::sendResponse(
-			501, 
-			json_encode(array('status' => 'error', 'errors' => array('Delete not supported'))), 
-			$format
-		);
+		# DELETE vars to POST vars
+		$_POST = $request->getRequestVars();
+print_r($_POST);
 
+		if ( file_exists($model_name . "_delete.php") ) {
+			require_once($model_name . "_delete.php");
+		}
+		else {
+			# dunno what you want
+			RestUtils::sendResponse(
+				501, 
+				json_encode(array('status' => 'error', 'errors' => array('Delete Not Implemented'))), 
+				$format
+			);
+		}
+		break;
 
 	default :
 		RestUtils::sendResponse(

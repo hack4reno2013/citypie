@@ -32,7 +32,8 @@
     [self.webView loadRequest:requestObj];
     self.view.backgroundColor = [UIColor colorWithRed:245/255.0f green:238/255.0f blue:228/255.0f alpha:1];
     self.title = @"Create Task";
-    self.revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu_icon_white"] style:UIBarButtonItemStyleBordered target:self.revealViewController action:@selector(revealToggle:)];
+    UIImage *menuImage = [SVGKImage imageNamed:@"menu_icon.svg"].UIImage;
+    self.revealButtonItem = [[UIBarButtonItem alloc] initWithImage:menuImage style:UIBarButtonItemStyleBordered target:self.revealViewController action:@selector(revealToggle:)];
     self.navigationItem.leftBarButtonItem = self.revealButtonItem;
     self.navigationController.navigationBar.titleTextAttributes = @{UITextAttributeTextColor :[UIColor whiteColor], UITextAttributeFont: [UIFont fontWithName:@"Helvetica" size:20]};
     self.revealButtonItem.tintColor = [UIColor whiteColor];

@@ -23,12 +23,15 @@
 
 - (void)viewDidLoad
 {
+    
     self.slices = [NSMutableArray arrayWithCapacity:10];
-    self.revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu_icon_white"] style:UIBarButtonItemStyleBordered target:self.revealViewController action:@selector(revealToggle:)];
+    UIImage *menuImage = [SVGKImage imageNamed:@"menu_icon.svg"].UIImage;
+
+    self.revealButtonItem = [[UIBarButtonItem alloc] initWithImage:menuImage style:UIBarButtonItemStyleBordered target:self.revealViewController action:@selector(revealToggle:)];
     self.navigationItem.leftBarButtonItem = self.revealButtonItem;
     self.navigationController.navigationBar.titleTextAttributes = @{UITextAttributeTextColor :[UIColor whiteColor], UITextAttributeFont: [UIFont fontWithName:@"Helvetica" size:20]};
     self.revealButtonItem.tintColor = [UIColor whiteColor];
-
+    [self.menuButton setImage:menuImage forState:UIControlStateNormal];
     NSNumber *entertainment = [NSNumber numberWithInt:10];
     NSNumber *outdoor = [NSNumber numberWithInt:20];
     NSNumber *industry = [NSNumber numberWithInt:30];
@@ -43,6 +46,7 @@
     self.menuView.backgroundColor = [UIColor colorWithRed:245/255.0f green:238/255.0f blue:228/255.0f alpha:1];
     [self.userInfoView setHidden:YES];
     [self.menuView setHidden:YES];
+    [self.webView setHidden:YES];
     [self.loadingIndicator startAnimating];
     [self.pieChartLeft setDataSource:self];
     //[self.pieChartLeft setStartPieAngle:M_PI_2];
@@ -167,9 +171,14 @@
 
 
 -(void) connectionDidFinishLoading:(NSURLConnection *)connection {
+    NSString *urlAddress = @"http://citypie.us/user/posts";
+    NSURL *url = [NSURL URLWithString:urlAddress];
+    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
+    [self.webView loadRequest:requestObj];
     [self.loadingIndicator stopAnimating];
     [self.userInfoView setHidden:NO];
     [self.menuView setHidden:NO];
+    [self.webView setHidden:NO];
     NSLog(@"connectionDidFinishLoading...");
     NSError *error = nil;
     //id result = [NSJSONSerialization JSONObjectWithData:self.receivedData options:kNilOptions error:&error];

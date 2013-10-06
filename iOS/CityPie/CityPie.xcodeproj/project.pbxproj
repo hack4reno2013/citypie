@@ -34,6 +34,10 @@
 		B9D8DDD01801D90D008E0F3D /* slice_profice.png in Resources */ = {isa = PBXBuildFile; fileRef = B9D8DDCF1801D90D008E0F3D /* slice_profice.png */; };
 		B9D8DDD31801E3CA008E0F3D /* LeaderboaedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D8DDD21801E3CA008E0F3D /* LeaderboaedViewController.m */; };
 		B9D8DDD61801EB36008E0F3D /* libSVGKit-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D8DDD51801EB36008E0F3D /* libSVGKit-iOS.a */; };
+		B9D8DE441801EC02008E0F3D /* menu_icon.svg in Resources */ = {isa = PBXBuildFile; fileRef = B9D8DE431801EC02008E0F3D /* menu_icon.svg */; };
+		B9D8DE461801EC88008E0F3D /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D8DE451801EC88008E0F3D /* libxml2.dylib */; };
+		B9D8DE481801ECEF008E0F3D /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D8DE471801ECEF008E0F3D /* CoreText.framework */; };
+		B9D8DE4A1801ECFB008E0F3D /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D8DE491801ECFB008E0F3D /* CoreImage.framework */; };
 		B9F402CF1800C2840032EA6A /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F402CE1800C2840032EA6A /* UserViewController.m */; };
 		B9F402D41800CECD0032EA6A /* AGMedallionView.m in Sources */ = {isa = PBXBuildFile; fileRef = B9F402D31800CECD0032EA6A /* AGMedallionView.m */; };
 		B9F402D61800DA3F0032EA6A /* menu_icon_tan.png in Resources */ = {isa = PBXBuildFile; fileRef = B9F402D51800DA3F0032EA6A /* menu_icon_tan.png */; };
@@ -212,6 +216,10 @@
 		B9D8DE401801EBC0008E0F3D /* SVGUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVGUtils.h; sourceTree = "<group>"; };
 		B9D8DE411801EBC0008E0F3D /* SVGViewSpec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVGViewSpec.h; sourceTree = "<group>"; };
 		B9D8DE421801EBC0008E0F3D /* Text.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Text.h; sourceTree = "<group>"; };
+		B9D8DE431801EC02008E0F3D /* menu_icon.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = menu_icon.svg; sourceTree = "<group>"; };
+		B9D8DE451801EC88008E0F3D /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		B9D8DE471801ECEF008E0F3D /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		B9D8DE491801ECFB008E0F3D /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
 		B9F402CD1800C2840032EA6A /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
 		B9F402CE1800C2840032EA6A /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
 		B9F402D01800C2B30032EA6A /* globals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = globals.h; sourceTree = "<group>"; };
@@ -247,6 +255,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9D8DE4A1801ECFB008E0F3D /* CoreImage.framework in Frameworks */,
+				B9D8DE481801ECEF008E0F3D /* CoreText.framework in Frameworks */,
+				B9D8DE461801EC88008E0F3D /* libxml2.dylib in Frameworks */,
 				B9D8DDD61801EB36008E0F3D /* libSVGKit-iOS.a in Frameworks */,
 				B956236C18009FD100E37552 /* QuartzCore.framework in Frameworks */,
 				B95623161800849700E37552 /* CoreGraphics.framework in Frameworks */,
@@ -290,6 +301,9 @@
 		B95623121800849700E37552 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B9D8DE491801ECFB008E0F3D /* CoreImage.framework */,
+				B9D8DE471801ECEF008E0F3D /* CoreText.framework */,
+				B9D8DE451801EC88008E0F3D /* libxml2.dylib */,
 				B9D8DDD51801EB36008E0F3D /* libSVGKit-iOS.a */,
 				B956236B18009FD100E37552 /* QuartzCore.framework */,
 				B95623131800849700E37552 /* Foundation.framework */,
@@ -395,6 +409,7 @@
 		B9D8DDC81801C046008E0F3D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B9D8DE431801EC02008E0F3D /* menu_icon.svg */,
 				B9D8DDCF1801D90D008E0F3D /* slice_profice.png */,
 				B956234B180093E700E37552 /* CityPie.png */,
 				B9F402FE180120CC0032EA6A /* GrandHotel.ttf */,
@@ -655,6 +670,7 @@
 				B9F402EB1800E7B80032EA6A /* 27AAE1.png in Resources */,
 				B956231E1800849700E37552 /* InfoPlist.strings in Resources */,
 				B9F40300180120FC0032EA6A /* GrandHotel.ttf in Resources */,
+				B9D8DE441801EC02008E0F3D /* menu_icon.svg in Resources */,
 				B95623501800947E00E37552 /* CityPie@2x.png in Resources */,
 				B9F402EF1800E8240032EA6A /* 532516.png in Resources */,
 				B9F402F11800E8760032EA6A /* EF4136.png in Resources */,
@@ -831,6 +847,7 @@
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/SVGKit-iOS-fpxzywqarnypyrhdrlxtxnrdtnmc/Build/Products/Debug-iphoneos",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -848,6 +865,7 @@
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/SVGKit-iOS-fpxzywqarnypyrhdrlxtxnrdtnmc/Build/Products/Debug-iphoneos",
 				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

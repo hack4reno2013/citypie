@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "SVGKit.h"
 @interface PostCreateViewController : UIViewController <UITextFieldDelegate>
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *revealButtonItem;
 @property (strong, nonatomic) IBOutlet UIWebView *webView;

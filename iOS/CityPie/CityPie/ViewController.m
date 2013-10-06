@@ -30,7 +30,9 @@
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:requestObj];
     self.navigationController.navigationBar.titleTextAttributes = @{UITextAttributeTextColor :[UIColor whiteColor], UITextAttributeFont: [UIFont fontWithName:@"Helvetica" size:20]};
-    self.revealButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"menu_icon_white"] style:UIBarButtonItemStyleBordered target:self.revealViewController action:@selector(revealToggle:)];
+    UIImage *menuImage = [SVGKImage imageNamed:@"menu_icon.svg"].UIImage;
+    [self.menuButton setImage:menuImage forState:UIControlStateNormal];
+    self.revealButtonItem = [[UIBarButtonItem alloc] initWithImage:menuImage style:UIBarButtonItemStyleBordered target:self.revealViewController action:@selector(revealToggle:)];
     self.revealButtonItem.tintColor = [UIColor whiteColor];
     self.navigationItem.leftBarButtonItem = self.revealButtonItem;
     self.slices = [NSMutableArray arrayWithCapacity:10];

@@ -25,5 +25,6 @@
 @property(nonatomic, strong) NSArray        *sliceColors;
 -(IBAction)toggleLeftSlide:(id)sender;
 -(IBAction)showMenu:(id)sender;
+@property (strong, nonatomic) IBOutlet UIButton *menuButton;
 @property (strong, nonatomic) IBOutlet UILabel *catLabel;
 @end

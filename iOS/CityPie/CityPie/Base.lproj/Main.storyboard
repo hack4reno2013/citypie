@@ -307,16 +307,13 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.73461415819999998" green="0.73461415819999998" blue="0.73461415819999998" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9KT-bB-Pbc">
-                                        <rect key="frame" x="259" y="11" width="41" height="31"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6FO-h1-DeB">
+                                        <rect key="frame" x="262" y="12" width="42" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" image="menu_icon_tan.png">
+                                        <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="2O8-aF-Trg" appends="YES" id="j9k-G0-arp"/>
-                                        </connections>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="All" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zVz-JN-QEE">
                                         <rect key="frame" x="95" y="16" width="130" height="22"/>
@@ -397,6 +394,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eqK-ct-kRr">
+                                <rect key="frame" x="0.0" y="206" width="320" height="362"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -407,8 +409,10 @@
                         <outlet property="citiesLabel" destination="2Ck-fv-1h1" id="mkz-8I-ToP"/>
                         <outlet property="createdLabel" destination="KHr-I1-db5" id="VTG-Jy-giM"/>
                         <outlet property="loadingIndicator" destination="7Cw-Qt-dYR" id="zhI-Hc-hcx"/>
+                        <outlet property="menuButton" destination="6FO-h1-DeB" id="wee-7O-wAn"/>
                         <outlet property="menuView" destination="yeC-BW-e20" id="QMr-Pl-5Uk"/>
                         <outlet property="userInfoView" destination="sUH-fK-BdJ" id="MmD-pm-HEx"/>
+                        <outlet property="webView" destination="eqK-ct-kRr" id="zWf-NV-UwX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9SY-tR-0mH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -574,10 +578,10 @@ Cg
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KtX-sN-Xf1">
-                                        <rect key="frame" x="259" y="11" width="41" height="31"/>
+                                        <rect key="frame" x="262" y="12" width="42" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <state key="normal" image="menu_icon_tan.png">
+                                        <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -611,7 +615,7 @@ Cg
                                 <color key="backgroundColor" red="0.73461415819999998" green="0.73461415819999998" blue="0.73461415819999998" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pp2-wl-2dm">
-                                <rect key="frame" x="0.0" y="197" width="320" height="307"/>
+                                <rect key="frame" x="0.0" y="196" width="320" height="373"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <dataDetectorType key="dataDetectorTypes"/>
@@ -630,6 +634,7 @@ Cg
                     <connections>
                         <outlet property="catLabel" destination="fwp-ce-eYo" id="0aS-T1-50N"/>
                         <outlet property="chartView" destination="Rdv-yJ-iQG" id="QOF-ho-Qqu"/>
+                        <outlet property="menuButton" destination="KtX-sN-Xf1" id="g3N-GV-S3Y"/>
                         <outlet property="menuView" destination="0Tu-LV-seQ" id="yFN-kI-Fa6"/>
                         <outlet property="pieChartLeft" destination="ZCv-JI-xTw" id="NW6-zz-hYI"/>
                         <outlet property="webView" destination="Pp2-wl-2dm" id="dGf-ny-Bsz"/>
@@ -720,7 +725,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dNI-qh-8Gs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-394" y="-1166"/>
+            <point key="canvasLocation" x="-399" y="-1166"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="GaW-ep-5kf">
@@ -970,7 +975,13 @@ Cg
     </scenes>
     <resources>
         <image name="CityPie_logo_menu.png" width="625" height="129"/>
-        <image name="menu_icon_tan.png" width="31" height="31"/>
+        <image name="CityPie_logo_menu.png" width="625" height="129"/>
+        <image name="CityPie_logo_menu.png" width="625" height="129"/>
+        <image name="slice_profice.png" width="197" height="194"/>
+        <image name="slice_profice.png" width="197" height="194"/>
+        <image name="slice_profice.png" width="197" height="194"/>
+        <image name="slice_profice.png" width="197" height="194"/>
+        <image name="slice_profice.png" width="197" height="194"/>
         <image name="slice_profice.png" width="197" height="194"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

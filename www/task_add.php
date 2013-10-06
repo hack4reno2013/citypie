@@ -126,11 +126,12 @@ if ( $update ) {
 		}
 		else {
 			$tasks->insert($data);
+			$id = $data['_id'];
 			$notices[] = "Task Added";
 		}
 		
 		if ( $requirement == 'scan' ) {
-			$redir = UrlEncode('http://' . $_SERVER['HTTP_HOST'] . '/qr?id=' .  $data['_id']);
+			$redir = UrlEncode('http://' . $_SERVER['HTTP_HOST'] . '/qr?id=' . $id);
 			header("Location: http://chart.apis.google.com/chart?cht=qr&chs=300x300&chl=" . $redir . "&chld=H|0");
 			exit;
 		}

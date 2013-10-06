@@ -50,6 +50,7 @@ if ( count($errors) == 0 ) {
 	$data['tasks'] = array();
 	try {
 		$users->insert($data);
+		setcookie('user_id', $data['_id'], 3600*24*365);
 		$status_code = 200;
 		$response['status'] = 'ok';
 		$response['data'] = $data;
@@ -61,7 +62,7 @@ if ( count($errors) == 0 ) {
 			'cities' => $data['cities'], 
 			'checks' => $data['checks'], 
 			'bookmarks' => $data['bookmarks'], 
-			'badges' => $data['badges']
+			'badges' => $data['badges'], 
 			'tasks' => $data['tasks']
 		);
 	}
@@ -72,7 +73,7 @@ if ( count($errors) == 0 ) {
 	}
 }
 else {
-	$status_code = 500;
+	$status_code = 400;
 	$response['status'] = 'error';
 	$response['errors'] = $errors;
 }

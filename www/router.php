@@ -7,8 +7,11 @@ $request_path = preg_replace(
 );
 
 switch ($request_path) {
-	case '/about':
-		$page = 'about.php';
+	case '/signup':
+		$page = 'signup.php';
+		break;
+	case '/login':
+		$page = 'login.php';
 		break;
 	default:
 		$page = '404.php';

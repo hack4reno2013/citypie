@@ -96,8 +96,8 @@ if ( strtolower($_SERVER['REQUEST_METHOD']) == 'post') {
 <!DOCTYPE html>
 <head>
 	<title> CityPie </title>
-	<link rel = "stylesheet" type="text/css" href = "css/reset.css">
-	<link rel = "stylesheet" type="text/css" href = "css/master.css">
+	<link rel = "stylesheet" type="text/css" href = "/css/reset.css">
+	<link rel = "stylesheet" type="text/css" href = "/css/master.css">
 	<link rel="icon" type="image/x-icon" href="favicon.png">
 	<link href='http://fonts.googleapis.com/css?family=Grand+Hotel' rel='stylesheet' type='text/css'>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>

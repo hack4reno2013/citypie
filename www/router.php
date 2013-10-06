@@ -13,6 +13,9 @@ switch ($request_path) {
 	case '/login':
 		$page = 'login.php';
 		break;
+	case '/task/add':
+		$page = 'task_add.php';
+		break;
 	default:
 		$page = '404.php';
 }

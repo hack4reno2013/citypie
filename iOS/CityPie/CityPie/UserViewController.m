@@ -29,7 +29,7 @@
 
     self.revealButtonItem = [[UIBarButtonItem alloc] initWithImage:menuImage style:UIBarButtonItemStyleBordered target:self.revealViewController action:@selector(revealToggle:)];
     self.navigationItem.leftBarButtonItem = self.revealButtonItem;
-    self.navigationController.navigationBar.titleTextAttributes = @{UITextAttributeTextColor :[UIColor whiteColor], UITextAttributeFont: [UIFont fontWithName:@"Helvetica" size:20]};
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName :[UIColor whiteColor], NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:20]};
     self.revealButtonItem.tintColor = [UIColor whiteColor];
     [self.menuButton setImage:menuImage forState:UIControlStateNormal];
     NSNumber *entertainment = [NSNumber numberWithInt:10];
@@ -53,7 +53,7 @@
     [self.pieChartLeft setAnimationSpeed:1.0];
     [self.pieChartLeft setShowPercentage:NO];
     [self.pieChartLeft setPieBackgroundColor:[UIColor colorWithRed:245/255.0f green:238/255.0f blue:228/255.0f alpha:1]];
-    [self.pieChartLeft setPieCenter:CGPointMake(15, 15)];
+    [self.pieChartLeft setPieCenter:CGPointMake(77, 80)];
     [self.pieChartLeft setUserInteractionEnabled:NO];
     self.pieChartLeft.showLabel = NO;
     self.sliceColors =[NSArray arrayWithObjects:[self colorFromHexString:@"#00A651"],[self colorFromHexString:@"#27AAE1"],[self colorFromHexString:@"#662D91"],[self colorFromHexString:@"#532516"],[self colorFromHexString:@"#FBB040"],[self colorFromHexString:@"#EF4136"], nil];
@@ -61,6 +61,10 @@
     [self.navigationController.navigationBar setBarTintColor:[UIColor colorWithRed:49/255.0f green:49/255.0f blue:49/255.0f alpha:1]];
     [self setEdgesForExtendedLayout:UIRectEdgeNone];
 
+}
+-(void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self.pieChartLeft reloadData];
 }
 // Nav back
 - (void) popVC{
@@ -187,7 +191,7 @@
    // self.userImage = [[jsonData objectForKey:@"data"] objectForKey:@"pic"];
     NSURL * imageURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@", BASE, [[jsonData objectForKey:@"data"] objectForKey:@"pic"]]];
     NSData * imageData = [NSData dataWithContentsOfURL:imageURL];
-    NSLog(@"%@", imageData);
+   // NSLog(@"%@", imageData);
     if (imageData == NULL) {
         UIImage *image = [UIImage imageNamed:@"slice_profile_small"];
         self.medallionView = [[AGMedallionView alloc] initWithFrame:CGRectMake(10, 10, 135, 140)];

@@ -11,6 +11,10 @@
 @interface LoginViewController : UIViewController
 - (IBAction)login:(id)sender;
 @property (strong, nonatomic) IBOutlet UIButton *logMeIn;
+@property (strong, nonatomic) NSMutableData *responseData;
+@property (strong, nonatomic) IBOutlet UITextField *userEmail;
+@property (strong, nonatomic) IBOutlet UITextField *userPassword;
+
 - (IBAction)cancle:(id)sender;
 
 @end

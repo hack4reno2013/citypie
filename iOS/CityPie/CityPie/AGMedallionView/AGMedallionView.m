@@ -104,7 +104,7 @@
 {
     _alphaGradient = NULL;
     
-    self.borderColor = [UIColor whiteColor];
+    self.borderColor = [UIColor clearColor];
     self.borderWidth = 5.f;
     self.shadowColor = [UIColor colorWithRed:0.25f green:0.25f blue:0.25f alpha:.75f];
     self.shadowOffset = CGSizeMake(0, 0);
@@ -177,14 +177,14 @@
     CGContextMoveToPoint(mainMaskContextRef, 0, 0);
     CGContextAddEllipseInRect(mainMaskContextRef, imageRect);
     CGContextFillPath(mainMaskContextRef);
-    // Create shine mask shape
+    /*// Create shine mask shape
     CGContextTranslateCTM(shineMaskContextRef, -(rect.size.width / 4), rect.size.height / 4 * 3);
     CGContextRotateCTM(shineMaskContextRef, -45.f);
     CGContextMoveToPoint(shineMaskContextRef, 0, 0);
     CGContextFillRect(shineMaskContextRef, CGRectMake(0, 
                                                       0, 
                                                       rect.size.width / 8 * 5, 
-                                                      rect.size.height));
+                                                      rect.size.height));*/
     
     CGImageRef mainMaskImageRef = CGBitmapContextCreateImage(mainMaskContextRef);
     CGImageRef shineMaskImageRef = CGBitmapContextCreateImage(shineMaskContextRef);

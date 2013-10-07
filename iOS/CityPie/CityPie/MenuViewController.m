@@ -82,7 +82,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 5;
+    return 4;
 }
 
 
@@ -93,19 +93,16 @@
     switch ( indexPath.row )
     {
         case 0:
-            CellIdentifier = @"image";
-            break;
-        case 1:
             CellIdentifier = @"home";
             break;
             
-        case 2:
+        case 1:
             CellIdentifier = @"profile";
             break;
-        case 3:
+        case 2:
             CellIdentifier = @"create_task";
             break;
-        case 4:
+        case 3:
             CellIdentifier = @"leaderboard";
             break;
     }

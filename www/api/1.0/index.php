@@ -9,7 +9,8 @@ $dispatcher = array(
 	'categories' => 'category', 
 	'tags'       => 'tag', 
 	'tasks'      => 'task', 
-	'user_tasks' => 'user_task'
+	'user_tasks' => 'user_task', 
+	'login'      => 'login'
 );
 
 $errors = array();

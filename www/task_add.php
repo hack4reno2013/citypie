@@ -16,7 +16,7 @@ if (! is_null($cursor) ) {
 	}
 }
 
-if ( isset($_REQUEST['id']) ) {
+if ( isset($_REQUEST['id']) && strlen($_REQUEST['id']) > 0) {
 	$action = 'Update';
 	$id = $_REQUEST['id'];
 	$mongo_id = new MongoID($id);
@@ -126,11 +126,12 @@ if ( $update ) {
 		}
 		else {
 			$tasks->insert($data);
+			$id = $data['_id'];
 			$notices[] = "Task Added";
 		}
 		
 		if ( $requirement == 'scan' ) {
-			$redir = UrlEncode('http://' . $_SERVER['HTTP_HOST'] . '/qr?id=' .  $data['_id']);
+			$redir = UrlEncode('http://' . $_SERVER['HTTP_HOST'] . '/qr.php?id=' . $id);
 			header("Location: http://chart.apis.google.com/chart?cht=qr&chs=300x300&chl=" . $redir . "&chld=H|0");
 			exit;
 		}

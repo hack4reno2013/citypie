@@ -1,6 +1,7 @@
 Welcome to CityPie
 =================
 An AWESOME application for the City of Reno <3
+Feel free to create a merge request
 
 Todo's
 ======

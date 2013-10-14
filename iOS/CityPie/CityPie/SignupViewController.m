@@ -17,7 +17,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.signUpButton.font = [UIFont fontWithName:@"Grand Hotel" size:48];
+    self.signUpButton.titleLabel.font = [UIFont fontWithName:@"Grand Hotel" size:48];
     self.view.backgroundColor = [UIColor colorWithRed:245/255.0f green:238/255.0f blue:228/255.0f alpha:1];
 
 }
@@ -52,7 +52,7 @@
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     NSLog(@"didFailWithError");
-    NSLog([NSString stringWithFormat:@"Connection failed: %@", [error description]]);
+    NSLog(@"%@",[NSString stringWithFormat:@"Connection failed: %@", [error description]]);
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {

@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SVGKit.h"
 
 @interface MenuViewController : UITableViewController
 @property (strong, nonatomic) IBOutlet UIButton *signup;
 @property (strong, nonatomic) IBOutlet UIButton *login;
+@property (strong, nonatomic) IBOutlet UIImageView *menuLogo;
 
 @end

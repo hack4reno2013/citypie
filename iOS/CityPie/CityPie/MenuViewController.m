@@ -26,11 +26,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.signup.font = [UIFont fontWithName:@"Grand Hotel" size:36];
+    self.signup.titleLabel.font = [UIFont fontWithName:@"Delius Swash Caps" size:36];
     [self.signup setTitleColor:[UIColor colorWithRed:44/255.0 green:44/255.0 blue:46/255.0 alpha:1] forState:UIControlStateNormal];
     self.tableView.backgroundColor = [UIColor colorWithRed:224/255.0 green:219/255.0 blue:208/255.0 alpha:1];
-    
-    self.login.font = [UIFont fontWithName:@"Grand Hotel" size:36];
+    self.menuLogo.image = [SVGKImage imageNamed:@"CityPie_logo_menu.svg"].UIImage;
+    self.login.titleLabel.font = [UIFont fontWithName:@"Delius Swash Caps" size:36];
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  

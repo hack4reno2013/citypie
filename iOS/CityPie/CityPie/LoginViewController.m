@@ -19,7 +19,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.logMeIn.font = [UIFont fontWithName:@"Grand Hotel" size:48];
+    self.logMeIn.titleLabel.font = [UIFont fontWithName:@"Grand Hotel" size:48];
     self.view.backgroundColor = [UIColor colorWithRed:245/255.0f green:238/255.0f blue:228/255.0f alpha:1];
 	// Do any additional setup after loading the view.
 }

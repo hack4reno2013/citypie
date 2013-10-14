@@ -232,6 +232,65 @@
             </objects>
             <point key="canvasLocation" x="-406" y="135"/>
         </scene>
+        <!--Super Secret Settings View Controller-->
+        <scene sceneID="L1C-TJ-MEE">
+            <objects>
+                <viewController id="jOU-YX-VpA" customClass="SuperSecretSettingsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eHd-Cv-yly"/>
+                        <viewControllerLayoutGuide type="bottom" id="sHN-xP-ELE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Goq-pG-oih">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="userID = " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tTc-O0-I5d">
+                                <rect key="frame" x="0.0" y="63" width="320" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New userID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Mdc-vD-iTT">
+                                <rect key="frame" x="20" y="100" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbq-0r-Cds">
+                                <rect key="frame" x="133" y="138" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Set">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="setID:" destination="jOU-YX-VpA" eventType="touchUpInside" id="QiV-bf-FXb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3Y-t7-JpZ">
+                                <rect key="frame" x="254" y="20" width="66" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Done">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="done:" destination="jOU-YX-VpA" eventType="touchUpInside" id="y86-cz-QXM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="wUb-88-x63"/>
+                    <connections>
+                        <outlet property="newtUserID" destination="Mdc-vD-iTT" id="z43-Cu-ruI"/>
+                        <outlet property="userID" destination="tTc-O0-I5d" id="6WH-4D-CEb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jkT-yp-IE7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-406" y="801"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="zaM-PK-UNi">
             <objects>
@@ -680,7 +739,7 @@ Cg
         <!--Login View Controller - Login-->
         <scene sceneID="CdD-A3-ufW">
             <objects>
-                <viewController id="cN8-3E-BTg" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="cN8-3E-BTg" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g14-ti-71b"/>
                         <viewControllerLayoutGuide type="bottom" id="Tkv-PA-uH0"/>
@@ -872,7 +931,7 @@ Cg
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CityPie_logo_menu.png" translatesAutoresizingMaskIntoConstraints="NO" id="z95-ez-x2a">
-                                    <rect key="frame" x="16" y="11" width="226" height="46"/>
+                                    <rect key="frame" x="16" y="11" width="226" height="41"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -881,11 +940,11 @@ Cg
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="Bsb-qP-XPP">
-                            <rect key="frame" x="0.0" y="307" width="320" height="94"/>
+                            <rect key="frame" x="0.0" y="307" width="320" height="261"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Prj-rn-8f8">
-                                    <rect key="frame" x="20" y="14" width="112" height="60"/>
+                                    <rect key="frame" x="9" y="14" width="132" height="60"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
                                     <state key="normal" title="Sign Up">
@@ -897,7 +956,7 @@ Cg
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Riv-3z-kRe">
-                                    <rect key="frame" x="140" y="14" width="99" height="60"/>
+                                    <rect key="frame" x="149" y="14" width="99" height="60"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
                                     <state key="normal" title="Login">
@@ -910,6 +969,10 @@ Cg
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <gestureRecognizers/>
+                            <connections>
+                                <outletCollection property="gestureRecognizers" destination="epA-rt-ABY" appends="YES" id="DTT-t7-1jw"/>
+                            </connections>
                         </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="home" textLabel="VRg-rZ-K98" style="IBUITableViewCellStyleDefault" id="zaV-gT-mSO">
@@ -1005,15 +1068,23 @@ Cg
                     </tableView>
                     <connections>
                         <outlet property="login" destination="Riv-3z-kRe" id="Cgy-IL-ZLN"/>
+                        <outlet property="menuLogo" destination="z95-ez-x2a" id="Aua-en-foC"/>
                         <outlet property="signup" destination="Prj-rn-8f8" id="cyD-2A-h92"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oRg-JV-sUE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="3" numberOfTouchesRequired="3" id="epA-rt-ABY">
+                    <connections>
+                        <segue destination="jOU-YX-VpA" kind="modal" id="tiC-US-ual"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1" y="-519"/>
         </scene>
     </scenes>
     <resources>
+        <image name="CityPie_logo_menu.png" width="625" height="129"/>
+        <image name="CityPie_logo_menu.png" width="625" height="129"/>
         <image name="CityPie_logo_menu.png" width="625" height="129"/>
         <image name="slice_profice.png" width="197" height="194"/>
     </resources>

@@ -175,10 +175,13 @@
 
 
 -(void) connectionDidFinishLoading:(NSURLConnection *)connection {
-    NSString *urlAddress = @"http://citypie.us/user/posts";
+    NSUserDefaults *storage = [NSUserDefaults standardUserDefaults];
+    NSString *urlAddress = [NSString stringWithFormat:@"http://citypie.us/Pages/Profile/index.php?userId=%@", [storage objectForKey:@"user_id"]];
     NSURL *url = [NSURL URLWithString:urlAddress];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:requestObj];
+    NSString * jsCallBack = @"window.getSelection().removeAllRanges();";
+    [self.webView stringByEvaluatingJavaScriptFromString:jsCallBack];
     [self.loadingIndicator stopAnimating];
     [self.userInfoView setHidden:NO];
     [self.menuView setHidden:NO];

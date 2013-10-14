@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B94FC168180C7CA500A70385 /* DeliusSwashCaps-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B94FC167180C7CA500A70385 /* DeliusSwashCaps-Regular.ttf */; };
+		B94FC16A180C7DEA00A70385 /* libSVGKit-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B94FC169180C7DEA00A70385 /* libSVGKit-iOS.a */; };
+		B94FC16C180C80E700A70385 /* CityPie_logo_menu.svg in Resources */ = {isa = PBXBuildFile; fileRef = B94FC16B180C80E700A70385 /* CityPie_logo_menu.svg */; };
+		B94FC16F180C8A9B00A70385 /* SuperSecretSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B94FC16E180C8A9B00A70385 /* SuperSecretSettingsViewController.m */; };
 		B953DE5B1800BD1C001F8172 /* menu_icon_white.png in Resources */ = {isa = PBXBuildFile; fileRef = B953DE5A1800BD1C001F8172 /* menu_icon_white.png */; };
 		B95623141800849700E37552 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95623131800849700E37552 /* Foundation.framework */; };
 		B95623161800849700E37552 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B95623151800849700E37552 /* CoreGraphics.framework */; };
@@ -32,7 +36,6 @@
 		B9D8DDCB1801C504008E0F3D /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D8DDCA1801C504008E0F3D /* SignupViewController.m */; };
 		B9D8DDCE1801D88A008E0F3D /* PostCreateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D8DDCD1801D88A008E0F3D /* PostCreateViewController.m */; };
 		B9D8DDD31801E3CA008E0F3D /* LeaderboaedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B9D8DDD21801E3CA008E0F3D /* LeaderboaedViewController.m */; };
-		B9D8DDD61801EB36008E0F3D /* libSVGKit-iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D8DDD51801EB36008E0F3D /* libSVGKit-iOS.a */; };
 		B9D8DE441801EC02008E0F3D /* menu_icon.svg in Resources */ = {isa = PBXBuildFile; fileRef = B9D8DE431801EC02008E0F3D /* menu_icon.svg */; };
 		B9D8DE461801EC88008E0F3D /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D8DE451801EC88008E0F3D /* libxml2.dylib */; };
 		B9D8DE481801ECEF008E0F3D /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D8DE471801ECEF008E0F3D /* CoreText.framework */; };
@@ -70,6 +73,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B94FC167180C7CA500A70385 /* DeliusSwashCaps-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DeliusSwashCaps-Regular.ttf"; sourceTree = "<group>"; };
+		B94FC169180C7DEA00A70385 /* libSVGKit-iOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libSVGKit-iOS.a"; path = "../../../../Library/Developer/Xcode/DerivedData/SVGKit-iOS-aguxjzbqlmgjxwdgzutesjbzyzks/Build/Products/Debug-iphoneos/libSVGKit-iOS.a"; sourceTree = "<group>"; };
+		B94FC16B180C80E700A70385 /* CityPie_logo_menu.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = CityPie_logo_menu.svg; sourceTree = "<group>"; };
+		B94FC16D180C8A9B00A70385 /* SuperSecretSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperSecretSettingsViewController.h; sourceTree = "<group>"; };
+		B94FC16E180C8A9B00A70385 /* SuperSecretSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuperSecretSettingsViewController.m; sourceTree = "<group>"; };
 		B953DE5A1800BD1C001F8172 /* menu_icon_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menu_icon_white.png; sourceTree = "<group>"; };
 		B95623101800849700E37552 /* CityPie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CityPie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B95623131800849700E37552 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -258,7 +266,7 @@
 				B9D8DE4A1801ECFB008E0F3D /* CoreImage.framework in Frameworks */,
 				B9D8DE481801ECEF008E0F3D /* CoreText.framework in Frameworks */,
 				B9D8DE461801EC88008E0F3D /* libxml2.dylib in Frameworks */,
-				B9D8DDD61801EB36008E0F3D /* libSVGKit-iOS.a in Frameworks */,
+				B94FC16A180C7DEA00A70385 /* libSVGKit-iOS.a in Frameworks */,
 				B956236C18009FD100E37552 /* QuartzCore.framework in Frameworks */,
 				B95623161800849700E37552 /* CoreGraphics.framework in Frameworks */,
 				B95623181800849700E37552 /* UIKit.framework in Frameworks */,
@@ -301,6 +309,7 @@
 		B95623121800849700E37552 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B94FC169180C7DEA00A70385 /* libSVGKit-iOS.a */,
 				B9D8DE491801ECFB008E0F3D /* CoreImage.framework */,
 				B9D8DE471801ECEF008E0F3D /* CoreText.framework */,
 				B9D8DE451801EC88008E0F3D /* libxml2.dylib */,
@@ -402,6 +411,8 @@
 				B9D8DDCA1801C504008E0F3D /* SignupViewController.m */,
 				B9D8DDCC1801D88A008E0F3D /* PostCreateViewController.h */,
 				B9D8DDCD1801D88A008E0F3D /* PostCreateViewController.m */,
+				B94FC16D180C8A9B00A70385 /* SuperSecretSettingsViewController.h */,
+				B94FC16E180C8A9B00A70385 /* SuperSecretSettingsViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -411,8 +422,10 @@
 			children = (
 				B9D8DE4B1801F92E008E0F3D /* slice_profile_small.png */,
 				B9D8DE431801EC02008E0F3D /* menu_icon.svg */,
+				B94FC16B180C80E700A70385 /* CityPie_logo_menu.svg */,
 				B956234B180093E700E37552 /* CityPie.png */,
 				B9F402FE180120CC0032EA6A /* GrandHotel.ttf */,
+				B94FC167180C7CA500A70385 /* DeliusSwashCaps-Regular.ttf */,
 				B956234F1800947E00E37552 /* CityPie@2x.png */,
 				B953DE5A1800BD1C001F8172 /* menu_icon_white.png */,
 				B9F402D51800DA3F0032EA6A /* menu_icon_tan.png */,
@@ -663,11 +676,13 @@
 				B95623721800A50F00E37552 /* CHANGELOG.md in Resources */,
 				B9D8DE4C1801F92E008E0F3D /* slice_profile_small.png in Resources */,
 				B9F402E91800E75A0032EA6A /* 00A651.png in Resources */,
+				B94FC16C180C80E700A70385 /* CityPie_logo_menu.svg in Resources */,
 				B9F402FC180117470032EA6A /* CityPie_logo_menu.png in Resources */,
 				B9562352180094D500E37552 /* Images.xcassets in Resources */,
 				B953DE5B1800BD1C001F8172 /* menu_icon_white.png in Resources */,
 				B95623741800A50F00E37552 /* README.md in Resources */,
 				B9F402EB1800E7B80032EA6A /* 27AAE1.png in Resources */,
+				B94FC168180C7CA500A70385 /* DeliusSwashCaps-Regular.ttf in Resources */,
 				B956231E1800849700E37552 /* InfoPlist.strings in Resources */,
 				B9F40300180120FC0032EA6A /* GrandHotel.ttf in Resources */,
 				B9D8DE441801EC02008E0F3D /* menu_icon.svg in Resources */,
@@ -710,6 +725,7 @@
 				B9F402E31800DDD30032EA6A /* REMenu.m in Sources */,
 				B9F402F7180105F50032EA6A /* SWRevealViewController.m in Sources */,
 				B95623241800849700E37552 /* AppDelegate.m in Sources */,
+				B94FC16F180C8A9B00A70385 /* SuperSecretSettingsViewController.m in Sources */,
 				B9F402CF1800C2840032EA6A /* UserViewController.m in Sources */,
 				B95623201800849700E37552 /* main.m in Sources */,
 				B9F402E41800DDD30032EA6A /* REMenuContainerView.m in Sources */,
@@ -846,6 +862,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/SVGKit-iOS-fpxzywqarnypyrhdrlxtxnrdtnmc/Build/Products/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/SVGKit-iOS-aguxjzbqlmgjxwdgzutesjbzyzks/Build/Products/Debug-iphoneos",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -864,6 +881,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/SVGKit-iOS-fpxzywqarnypyrhdrlxtxnrdtnmc/Build/Products/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/SVGKit-iOS-aguxjzbqlmgjxwdgzutesjbzyzks/Build/Products/Debug-iphoneos",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";

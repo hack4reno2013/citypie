@@ -238,7 +238,7 @@ static CGPathRef CGPathCreateArc(CGPoint center, CGFloat radius, CGFloat startAn
             label = [NSString stringWithFormat:@"%0.0f", layer.percentage*100];
         else
             label = (layer.text)?layer.text:[NSString stringWithFormat:@"%0.0f", layer.value];
-        CGSize size = [label sizeWithFont:self.labelFont];
+        CGSize size = [label sizeWithAttributes:[NSDictionary dictionaryWithObject:self.labelFont forKey:NSFontAttributeName]];
         
         if(M_PI*2*_labelRadius*layer.percentage < MAX(size.width,size.height))
         {

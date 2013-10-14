@@ -22,13 +22,24 @@
     [scanner scanHexInt:&rgbValue];
     return [UIColor colorWithRed:((rgbValue & 0xFF0000) >> 16)/255.0 green:((rgbValue & 0xFF00) >> 8)/255.0 blue:(rgbValue & 0xFF)/255.0 alpha:1.0];
 }
+
 - (void)viewDidLoad
 {
-    
+    NSUserDefaults *storage = [NSUserDefaults standardUserDefaults];
+    if ([storage boolForKey:@"firstLaunch"] != YES) {
+        [storage setBool:YES forKey:@"firstLaunch"];
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+        [vc setModalPresentationStyle:UIModalPresentationFullScreen];
+        
+        [self presentModalViewController:vc animated:YES];
+    }
     NSString *urlAddress = @"http://citypie.us/posts";
     NSURL *url = [NSURL URLWithString:urlAddress];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:requestObj];
+    NSString * jsCallBack = @"window.getSelection().removeAllRanges();";
+    [self.webView stringByEvaluatingJavaScriptFromString:jsCallBack];
     self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName :[UIColor whiteColor], NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:20]};
     UIImage *menuImage = [SVGKImage imageNamed:@"menu_icon.svg"].UIImage;
     [self.menuButton setImage:menuImage forState:UIControlStateNormal];

@@ -7,5 +7,5 @@ Libraries used
  - SWRevealViewController
  - XYPieChart
 
-Most of which can be found on <a href="https://www.cocoacontrols.com/">CocoaControlls</a>
+Most of which can be found on <a href="https://www.cocoacontrols.com/">CocoaControls</a>
 

@@ -23,6 +23,7 @@ Backend:
 - Get the event task type working (location + date)
 - Start an admin area with full CRUD action for all data
 - Is there a decent mongo framework?
+- Throw away user page UI, replace it with JSON backend
 
 Web Front End:
 - I pretty much want to nuke this from orbit.
